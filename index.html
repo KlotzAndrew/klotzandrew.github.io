@@ -3,36 +3,25 @@ layout: default
 ---
 
 <div class="home">
+  <div>
+    <img
+      class="home-avatar"
+      src="{{ site.baseurl }}/assets/andrew.jpg"
+    />
+  </div>
 
-  <h1>Andrew Klotz</h1>
-
-  <h3>Avatar</h3>
-
-  <img src="{{ site.baseurl }}/assets/andrew.jpg" />
-
-  <p>Hey world! I am a Full Stack Developer. Started off with a pair of degrees in Financial Economics and Business (one of which was done in China).
-
-    When I am not working, you can find me reading about better code quality or doing research for the next startup.
-
-    I write in: Ruby, JavaScript, and CSS</p>
-
-
-
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+  <div class="home-content">
+    <p>
+      Hey world! I am a Full Stack Developer. Started off with a pair of
+      degrees in Financial Economics and Business (one of which was done
+      in China).
+    </p>
+    <p>
+      When I am not working, you can find me reading about better code
+      quality or doing research for the next startup.
+    </p>
+    <p>
+      I write in: Ruby, JavaScript, and CSS
+    </p>
+  </div>
 </div>
