@@ -85,45 +85,6 @@ $on-laptop:        800px;
   flex: 5;
 }
 
-// projects
-
-.project-images {
-  height: 200px;
-  position: relative;
-
-  img {
-    height: 200px;
-    position: absolute;
-    transition: all .3s ease;
-    width: 350px;
-  }
-
-  .passive {
-    opacity: 0;
-  }
-
-  &:hover {
-    .passive {
-      opacity: 1;
-    }
-  }
-}
-
-.project {
-  margin-top: 25px;
-  margin-bottom: 50px;
-
-  h3 {
-    font-weight: bold;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  .description {
-    margin-bottom: 10px;
-  }
-}
-
 .text-center {
   text-align: center;
 }
