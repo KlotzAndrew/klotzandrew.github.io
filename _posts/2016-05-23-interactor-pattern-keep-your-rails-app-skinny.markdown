@@ -2,7 +2,7 @@
 layout: post
 title:  "Interactor Pattern: Keep your rails app skinny"
 date:   2016-05-23 09:21:10 -0400
-categories: ruby
+categories: ruby, rails
 ---
 
 Ever struggled with where where to stick your Rails app logic? or had controllers and models getting big?
