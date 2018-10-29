@@ -8,7 +8,6 @@ categories: golang, SRE, pprof
 We are going to look at finding memory leaks in golang using a tool called
 <a href="https://github.com/google/pprof">pprof</a>.
 
-
 As a quick refresher, a memory leak is when an application holds onto memory
 after it is no longer needed. This comes up as problem because eventually
 the application runs out of available memory and crashes. The bright side is
@@ -23,7 +22,7 @@ easier. We're going to use an example webserver that we suspect has a leak in it
 ### <b>TLDR:</b>
 If your app is currently crashing and you need to know what to do
 1. add `import _ "net/http/pprof"`
-1. `curl 0.0.0.0:$PORT/debug/pprof/$PROFILER_TYPE` to generate profiler output
+1. `go tool pprof 0.0.0.0:$PORT/debug/pprof/$PROFILER_TYPE` to generate profiler output
 1. `go tool pprof $OUTPUT` to analyze
 1. `go tool pprof -base $OUTPUT_OLD 0.0.0.0:$PORT/debug/pprof/$PROFILER_TYPE`
 to generate profiler output of diff against a base
