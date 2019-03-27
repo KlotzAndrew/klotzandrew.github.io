@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "4 Types of work"
-date: 2019-01-28 17:20:00 -0500
+date: 2019-03-23 17:20:00 -0500
 categories: management, leadership
 ---
 
