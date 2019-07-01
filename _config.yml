@@ -9,7 +9,7 @@
 title: Andrew Klotz's blog
 email: agc.klotz@gmail.com
 description: >
-  Andrew Klotz is a software engineer
+  Andrew Klotz is a Software Engineer
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://klotzandrew.com" # the base hostname & protocol for your site
