@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Web Authorization with Open Policy Agent"
+title: "Web authorization with Open Policy Agent"
 date: 2019-04-28 17:20:00 -0500
-categories:  golang, web, authorization, open policy agent, opa
+categories: golang, web, authorization, open policy agent, opa
 ---
 
 So maybe you upgraded our authentication logic to no longer be a system bottleneck
