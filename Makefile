@@ -1,6 +1,7 @@
 .PHONY: start
 start:
-	docker run --rm \
+	docker start blog-container -a || docker run \
+		--name blog-container \
 		-v $(PWD):/usr/src \
 		-w /usr/src \
 		-p 4000:4000 \
