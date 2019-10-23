@@ -3,6 +3,8 @@ layout: post
 title: "Screenshot Blur as Lockscreen on OSX"
 date: 2019-10-22 17:00:00 -0500
 categories: hammerspoon, imagemagick, lua, bash
+excerpt: Take a screenshot, blur it, and use it as the screensaver with a little lock icon on top.
+image: screenshot-blur-lockscreen.png
 ---
 
 <div style="text-align: center; margin-bottom: 2rem;">

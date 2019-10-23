@@ -3,6 +3,7 @@ layout: post
 title: "Insert speed and Postgres indexes"
 date: 2019-10-17 17:00:00 -0500
 categories: postgres, sql
+image: insert-performance-indexes.png
 ---
 
 Adding too many indexes has a cost, we are going to run through some example data and what size of an

@@ -3,6 +3,7 @@ layout: post
 title: "Graph queries with Cypher in Neo4j"
 date: 2018-01-03 17:20:00 -0500
 categories: neo4j, cypher
+image: fisher_to_kitano.png
 ---
 
 Neo4j uses a declarative language called Cypher, that lets us easily make

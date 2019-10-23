@@ -3,6 +3,7 @@ layout: post
 title: "Neo4j bulk data import"
 date: 2018-01-01 17:20:00 -0500
 categories: neo4j, ruby
+image: neo4j-data-import.png
 ---
 
 Neo4j has a csv import tool that makes importing large datasets pretty easy,
