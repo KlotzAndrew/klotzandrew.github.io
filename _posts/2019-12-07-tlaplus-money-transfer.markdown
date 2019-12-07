@@ -62,7 +62,7 @@ Now how to counteract the loss of atomicity? We can start with awaiting on a loc
 
 <div style="text-align: center; margin-bottom: 2rem;">
   <img src="/assets/tlaplus_transfer.png" alt="tlaplus transfer" width="700">
-  <div>(screensaver while writing this)</div>
+  <div>(what was the invariant again?)</div>
 </div>
 
 Since the balances are on different steps, the invariant `MoneyInvariant == alice_account + bob_account = account_total` is impossible to enforce. Our system guarantees this is true *eventually* after an individual process has completed, but during that processes execution we have no atomic operator to guarantee that in this setup.
