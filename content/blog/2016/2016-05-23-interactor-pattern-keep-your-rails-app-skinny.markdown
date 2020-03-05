@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Interactor Pattern: Keep your rails app skinny"
-date:   2016-05-23 09:21:10 -0400
+title: "Interactor Pattern: Keep your rails app skinny"
+date: 2016-05-23 09:21:10 -0400
 categories: ruby, rails
 ---
 
@@ -22,7 +22,7 @@ Which will return from the interactor.
 
 A basic interactor for purchasing tickets could look something like this:
 
-{% highlight ruby %}
+```ruby
 class PurchaseTicket
   include Interactor
 
@@ -41,7 +41,7 @@ class PurchaseTicket
     # create ticket logic
   end
 end
-{% endhighlight %}
+```
 
 It is an object that includes `Interactor` and defines a method `call`.
 The context has the information required to purchase a ticket,
@@ -51,7 +51,7 @@ What does this mean for your rails app?
 You can keep your business logic out of your controllers and models.
 In the case above, the controller method could look something like this:
 
-{% highlight ruby %}
+```ruby
 class TicketsController < ApplicationController
   def create
     result = PurchaseTicket.call(ticket_params)
@@ -64,19 +64,19 @@ class TicketsController < ApplicationController
     end
   end
 end
-{% endhighlight %}
+```
 
 This controller method does not need to know how to purchase a ticket.
 Instead it needs to know if a ticket was purchased successfully, and what views to render.
 This also helps keep the Ticket model clean:
 
-{% highlight ruby %}
+```ruby
 class Ticket < ActiveRecord::Base
  belongs_to: user
  belongs_to: concert
  validates: price, presence: true
 end
-{% endhighlight %}
+```
 
 This model never has to know how tickets are purchased, or who does the purchasing.
 Its responsibility can stick to just describing out applications data.

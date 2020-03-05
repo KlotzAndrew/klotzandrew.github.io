@@ -10,56 +10,12 @@ WASM has been making a lot of progress recently so I was looking for a small pro
 
 Full code <a href="https://github.com/KlotzAndrew/tetris-rust-wasm">here</a>, pull requests welcome! And a live demo:
 
-<div style="text-align: center; margin: 2rem auto;">
-  <div onclick="foo()">Click to Start!</div>
-  <canvas id="board"></canvas>
-  <div>rotate/left/down/right: 'w/a/s/d'</div>
-</div>
-
-<script type="module">
-  import init, { build_board } from '/assets/tetris_rust_wasm.js';
-
-  const foo = () => { console.log("yee")};
-
-  let game;
-  async function run() {
-    await init();
-    game = build_board(20, 10, 24);
-  }
-  let started = false;
-  const start = () => {
-    if (started) return;
-    started = true;
-
-    const delay = 400;
-    let last = Date.now();
-    function mainLoop() {
-      if ((Date.now() - last) > delay) {
-        game.tick();
-        last = Date.now();
-      }
-      if (!game.game_over) { requestAnimationFrame(mainLoop); }
-    }
-    requestAnimationFrame(mainLoop);
-
-    function keyboardControls(event) {
-      if (event.keyCode === 65) {
-        game.move_left();
-      } else if (event.keyCode === 87) {
-        game.rotate();
-      } else if (event.keyCode === 68) {
-        game.move_right();
-      } else if (event.keyCode === 83) {
-        game.move_down();
-      }
-      last = Date.now();
-    }
-    document.addEventListener('keydown', keyboardControls);
-  };
-  run().then(
-    document.getElementById("board"),addEventListener("click", start)
-  )
-</script>
+<iframe
+  align="middle"
+  style="width:100%"
+  height=600
+  frameborder="0" scrolling="no"
+  src="https://s3.amazonaws.com/klotzandrew.com/games/rust-wasm-tetris/index.html" ></iframe>
 
 Rust itself does a better introduction on WASM, take a read if you have not yet: https://rustwasm.github.io/docs/book/introduction.html
 
@@ -177,9 +133,7 @@ And now we have a working tetris board running in our browser! This is the full 
 
 ```html
 <script type="module">
- import init, { build_board } from '/assets/tetris_rust_wasm.js';
-
- const foo = () => { console.log("yee")};
+ import init, { build_board } from '../../assets/tetris_rust_wasm.js';
 
  let game;
  async function run() {

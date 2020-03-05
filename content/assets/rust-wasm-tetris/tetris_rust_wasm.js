@@ -75,16 +75,16 @@ let cachedTextEncoder = new TextEncoder('utf-8');
 
 const encodeString = (typeof cachedTextEncoder.encodeInto === 'function'
     ? function (arg, view) {
-    return cachedTextEncoder.encodeInto(arg, view);
-}
+        return cachedTextEncoder.encodeInto(arg, view);
+    }
     : function (arg, view) {
-    const buf = cachedTextEncoder.encode(arg);
-    view.set(buf);
-    return {
-        read: arg.length,
-        written: buf.length
-    };
-});
+        const buf = cachedTextEncoder.encode(arg);
+        view.set(buf);
+        return {
+            read: arg.length,
+            written: buf.length
+        };
+    });
 
 function passStringToWasm(arg) {
 
@@ -128,7 +128,7 @@ function debugString(val) {
     // primitive types
     const type = typeof val;
     if (type == 'number' || type == 'boolean' || val == null) {
-        return  `${val}`;
+        return `${val}`;
     }
     if (type == 'string') {
         return `"${val}"`;
@@ -156,7 +156,7 @@ function debugString(val) {
         if (length > 0) {
             debug += debugString(val[0]);
         }
-        for(let i = 1; i < length; i++) {
+        for (let i = 1; i < length; i++) {
             debug += ', ' + debugString(val[i]);
         }
         debug += ']';
@@ -239,52 +239,52 @@ function init(module) {
     let result;
     const imports = {};
     imports.wbg = {};
-    imports.wbg.__wbindgen_object_drop_ref = function(arg0) {
+    imports.wbg.__wbindgen_object_drop_ref = function (arg0) {
         takeObject(arg0);
     };
-    imports.wbg.__wbindgen_string_new = function(arg0, arg1) {
+    imports.wbg.__wbindgen_string_new = function (arg0, arg1) {
         const ret = getStringFromWasm(arg0, arg1);
         return addHeapObject(ret);
     };
-    imports.wbg.__wbg_log_e7ee0f7a5618b252 = function(arg0, arg1) {
+    imports.wbg.__wbg_log_e7ee0f7a5618b252 = function (arg0, arg1) {
         console.log(getStringFromWasm(arg0, arg1));
     };
-    imports.wbg.__wbg_alert_c48128e4665ec187 = function(arg0, arg1) {
+    imports.wbg.__wbg_alert_c48128e4665ec187 = function (arg0, arg1) {
         alert(getStringFromWasm(arg0, arg1));
     };
-    imports.wbg.__wbindgen_object_clone_ref = function(arg0) {
+    imports.wbg.__wbindgen_object_clone_ref = function (arg0) {
         const ret = getObject(arg0);
         return addHeapObject(ret);
     };
-    imports.wbg.__widl_instanceof_Window = function(arg0) {
+    imports.wbg.__widl_instanceof_Window = function (arg0) {
         const ret = getObject(arg0) instanceof Window;
         return ret;
     };
-    imports.wbg.__widl_instanceof_CanvasRenderingContext2D = function(arg0) {
+    imports.wbg.__widl_instanceof_CanvasRenderingContext2D = function (arg0) {
         const ret = getObject(arg0) instanceof CanvasRenderingContext2D;
         return ret;
     };
-    imports.wbg.__widl_f_set_stroke_style_CanvasRenderingContext2D = function(arg0, arg1) {
+    imports.wbg.__widl_f_set_stroke_style_CanvasRenderingContext2D = function (arg0, arg1) {
         getObject(arg0).strokeStyle = getObject(arg1);
     };
-    imports.wbg.__widl_f_set_fill_style_CanvasRenderingContext2D = function(arg0, arg1) {
+    imports.wbg.__widl_f_set_fill_style_CanvasRenderingContext2D = function (arg0, arg1) {
         getObject(arg0).fillStyle = getObject(arg1);
     };
-    imports.wbg.__widl_f_fill_rect_CanvasRenderingContext2D = function(arg0, arg1, arg2, arg3, arg4) {
+    imports.wbg.__widl_f_fill_rect_CanvasRenderingContext2D = function (arg0, arg1, arg2, arg3, arg4) {
         getObject(arg0).fillRect(arg1, arg2, arg3, arg4);
     };
-    imports.wbg.__widl_f_stroke_rect_CanvasRenderingContext2D = function(arg0, arg1, arg2, arg3, arg4) {
+    imports.wbg.__widl_f_stroke_rect_CanvasRenderingContext2D = function (arg0, arg1, arg2, arg3, arg4) {
         getObject(arg0).strokeRect(arg1, arg2, arg3, arg4);
     };
-    imports.wbg.__widl_f_get_element_by_id_Document = function(arg0, arg1, arg2) {
+    imports.wbg.__widl_f_get_element_by_id_Document = function (arg0, arg1, arg2) {
         const ret = getObject(arg0).getElementById(getStringFromWasm(arg1, arg2));
         return isLikeNone(ret) ? 0 : addHeapObject(ret);
     };
-    imports.wbg.__widl_instanceof_HTMLCanvasElement = function(arg0) {
+    imports.wbg.__widl_instanceof_HTMLCanvasElement = function (arg0) {
         const ret = getObject(arg0) instanceof HTMLCanvasElement;
         return ret;
     };
-    imports.wbg.__widl_f_get_context_HTMLCanvasElement = function(arg0, arg1, arg2) {
+    imports.wbg.__widl_f_get_context_HTMLCanvasElement = function (arg0, arg1, arg2) {
         try {
             const ret = getObject(arg0).getContext(getStringFromWasm(arg1, arg2));
             return isLikeNone(ret) ? 0 : addHeapObject(ret);
@@ -292,21 +292,21 @@ function init(module) {
             handleError(e)
         }
     };
-    imports.wbg.__widl_f_set_width_HTMLCanvasElement = function(arg0, arg1) {
+    imports.wbg.__widl_f_set_width_HTMLCanvasElement = function (arg0, arg1) {
         getObject(arg0).width = arg1 >>> 0;
     };
-    imports.wbg.__widl_f_set_height_HTMLCanvasElement = function(arg0, arg1) {
+    imports.wbg.__widl_f_set_height_HTMLCanvasElement = function (arg0, arg1) {
         getObject(arg0).height = arg1 >>> 0;
     };
-    imports.wbg.__widl_f_document_Window = function(arg0) {
+    imports.wbg.__widl_f_document_Window = function (arg0) {
         const ret = getObject(arg0).document;
         return isLikeNone(ret) ? 0 : addHeapObject(ret);
     };
-    imports.wbg.__wbg_newnoargs_0c3c518a7f7c56bf = function(arg0, arg1) {
+    imports.wbg.__wbg_newnoargs_0c3c518a7f7c56bf = function (arg0, arg1) {
         const ret = new Function(getStringFromWasm(arg0, arg1));
         return addHeapObject(ret);
     };
-    imports.wbg.__wbg_call_aa56d0132fec7569 = function(arg0, arg1) {
+    imports.wbg.__wbg_call_aa56d0132fec7569 = function (arg0, arg1) {
         try {
             const ret = getObject(arg0).call(getObject(arg1));
             return addHeapObject(ret);
@@ -314,7 +314,7 @@ function init(module) {
             handleError(e)
         }
     };
-    imports.wbg.__wbg_globalThis_4fa2faeae7a7a380 = function() {
+    imports.wbg.__wbg_globalThis_4fa2faeae7a7a380 = function () {
         try {
             const ret = globalThis.globalThis;
             return addHeapObject(ret);
@@ -322,7 +322,7 @@ function init(module) {
             handleError(e)
         }
     };
-    imports.wbg.__wbg_self_ed02073ec1d8fef4 = function() {
+    imports.wbg.__wbg_self_ed02073ec1d8fef4 = function () {
         try {
             const ret = self.self;
             return addHeapObject(ret);
@@ -330,7 +330,7 @@ function init(module) {
             handleError(e)
         }
     };
-    imports.wbg.__wbg_window_356847be61f4a80f = function() {
+    imports.wbg.__wbg_window_356847be61f4a80f = function () {
         try {
             const ret = window.window;
             return addHeapObject(ret);
@@ -338,7 +338,7 @@ function init(module) {
             handleError(e)
         }
     };
-    imports.wbg.__wbg_global_6580a67633b0dbc1 = function() {
+    imports.wbg.__wbg_global_6580a67633b0dbc1 = function () {
         try {
             const ret = global.global;
             return addHeapObject(ret);
@@ -346,19 +346,19 @@ function init(module) {
             handleError(e)
         }
     };
-    imports.wbg.__wbindgen_is_undefined = function(arg0) {
+    imports.wbg.__wbindgen_is_undefined = function (arg0) {
         const ret = getObject(arg0) === undefined;
         return ret;
     };
     imports.wbg.__wbg_random_fa8400a56a74374c = typeof Math.random == 'function' ? Math.random : notDefined('Math.random');
-    imports.wbg.__wbindgen_debug_string = function(arg0, arg1) {
+    imports.wbg.__wbindgen_debug_string = function (arg0, arg1) {
         const ret = debugString(getObject(arg1));
         const ret0 = passStringToWasm(ret);
         const ret1 = WASM_VECTOR_LEN;
         getInt32Memory()[arg0 / 4 + 0] = ret0;
         getInt32Memory()[arg0 / 4 + 1] = ret1;
     };
-    imports.wbg.__wbindgen_throw = function(arg0, arg1) {
+    imports.wbg.__wbindgen_throw = function (arg0, arg1) {
         throw new Error(getStringFromWasm(arg0, arg1));
     };
 
@@ -367,35 +367,35 @@ function init(module) {
         const response = fetch(module);
         if (typeof WebAssembly.instantiateStreaming === 'function') {
             result = WebAssembly.instantiateStreaming(response, imports)
-            .catch(e => {
-                return response
-                .then(r => {
-                    if (r.headers.get('Content-Type') != 'application/wasm') {
-                        console.warn("`WebAssembly.instantiateStreaming` failed because your server does not serve wasm with `application/wasm` MIME type. Falling back to `WebAssembly.instantiate` which is slower. Original error:\n", e);
-                        return r.arrayBuffer();
-                    } else {
-                        throw e;
-                    }
-                })
-                .then(bytes => WebAssembly.instantiate(bytes, imports));
-            });
+                .catch(e => {
+                    return response
+                        .then(r => {
+                            if (r.headers.get('Content-Type') != 'application/wasm') {
+                                console.warn("`WebAssembly.instantiateStreaming` failed because your server does not serve wasm with `application/wasm` MIME type. Falling back to `WebAssembly.instantiate` which is slower. Original error:\n", e);
+                                return r.arrayBuffer();
+                            } else {
+                                throw e;
+                            }
+                        })
+                        .then(bytes => WebAssembly.instantiate(bytes, imports));
+                });
         } else {
             result = response
-            .then(r => r.arrayBuffer())
-            .then(bytes => WebAssembly.instantiate(bytes, imports));
+                .then(r => r.arrayBuffer())
+                .then(bytes => WebAssembly.instantiate(bytes, imports));
         }
     } else {
 
         result = WebAssembly.instantiate(module, imports)
-        .then(result => {
-            if (result instanceof WebAssembly.Instance) {
-                return { instance: result, module };
-            } else {
-                return result;
-            }
-        });
+            .then(result => {
+                if (result instanceof WebAssembly.Instance) {
+                    return { instance: result, module };
+                } else {
+                    return result;
+                }
+            });
     }
-    return result.then(({instance, module}) => {
+    return result.then(({ instance, module }) => {
         wasm = instance.exports;
         init.__wbindgen_wasm_module = module;
 
@@ -404,4 +404,3 @@ function init(module) {
 }
 
 export default init;
-

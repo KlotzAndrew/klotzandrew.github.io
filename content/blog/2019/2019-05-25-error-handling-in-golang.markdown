@@ -14,7 +14,7 @@ but the built in behavior is bare bones. But there are two features that really 
 The default behavior returns an error with a message. An example is doing a sql
 query where we bubble up `ErrNoRows` and return 404 for that error but 500 for other errors:
 
-```golang
+```go
 // handler.go
 import "database/sql"
 
@@ -48,7 +48,7 @@ their type, but the downside is our http handler now needs to import the `databa
 and we have no stack traces. We could define our own custom error type and return
 that instead:
 
-```golang
+```go
 // custom.go
 var ErrorNotFound = errors.New("Record not found")
 
@@ -60,7 +60,7 @@ func findUserByID(id int) (User, err) {
 ```
 
 Under the hood the sql error looks like this:
-```golang
+```go
 var ErrNoRows = errors.New("sql: no rows in result set")
 ```
 
@@ -74,7 +74,7 @@ and later up the stack get the original error with `errors.Cause(err)`. Our
 error handling code now gets a stack trace and has no need to import sql:
 
 
-```golang
+```go
 package main
 
 import (
@@ -107,7 +107,7 @@ A way to get around that would be to type assert on behavior instead of
 types. Where if our ErrorNotFound instead conformed to an interface, we could check
 against that, and just import an interface instead of a struct:
 
-```golang
+```go
 type InterfaceErrorNotFound interface {
   IsNotFound() bool
 }

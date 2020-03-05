@@ -39,7 +39,7 @@ with a golang program that takes input simmilar to `docker run /bin/bash`, but o
 look like `go run main.go run bash`
 
 # use golang to run a command
-```golang
+```go
 package main
 
 import (
@@ -79,7 +79,7 @@ The above code takes arguments starting with `run` and passes them to `exec.Comm
 So far this looks the same as any program
 that is making a call out to the system (although with arbitrarty user input).
 
-<img src="/assets/cfs-exec.png" width="200">
+![cfs exec](../../assets/cfs-exec.png)
 
 Running the above with `go run main.go run /bin/bash`, we have a container running a shell - but it can see everything.
 Although it cannot see my paused vim running from the previous shell. Exiting out and we can again
@@ -88,7 +88,7 @@ The next step is to add in some namespaces, here we can use `cmd.SysProcAttr` to
 tell the command to use its own namespaces
 
 # stargin with namespaces
-```golang
+```go
 cmd.SysProcAttr = &syscall.SysProcAttr{
     Cloneflags: syscall.CLONE_NEWUTS | syscall.CLONE_NEWPID
 }
@@ -100,7 +100,7 @@ invocation because we need to run our command from the forked exec. So what
 we will do is run a command that forks our current process with the namesapces, and in
 that command we run our actual command as a child:
 
-```golang
+```go
 func main() {
 	switch os.Args[1] {
 	case "run":
@@ -138,7 +138,7 @@ func child() {
 Running again with `go run main.go /bin/bash` give us the ability to isolate
 our hostname, beacuse of: `syscall.CLONE_NEWUTS`
 
-<img src="/assets/cfs-hostname.png" width="200">
+![cfs hostname](../../assets/cfs-hostname.png)
 
 Our PID will not actaully show PID 1 yet even though we have `syscall.CLONE_NEWPID`, because ps also looks
 at `ls /proc` for running processes. We will be able to get to this while doing the next step.
@@ -157,13 +157,13 @@ The above command will create a ubuntu filesystem, in the
 /var/lib/lxc/container/rootfs directory.
 
 Otherwise, this is what we need to do is add:
-```golang
+```go
 must(syscall.Chroot("mynewfs"))
 must(os.Chdir("/"))
 ```
 
 to our child function:
-```golang
+```go
 func child () {
     fmt.Printf("running %v as PID %d\n", os.Args[2:], os.Getpid())
 
@@ -194,7 +194,7 @@ Running `hostname` will show our containers hostname
 
 Running `ls` will show our containers filesystem
 
-<img src="/assets/cfs-container.png" width="600">
+![cfs hostname](../../assets/cfs-container.png)
 
 While there is much more than this to get docker working as well as it does, this
 covers the basics of getting our own namespaces to execute inside! If you want to try out more,
@@ -203,7 +203,7 @@ namespaces that do the really cool part of controlling resources like cpu and me
 
 The full code to get everything running:
 
-```golang
+```go
 package main
 
 import (

@@ -114,7 +114,7 @@ then return the overall effect `e` from the matched policies.
 
 Integrating this example into a golang project (using echo):
 
-```golang
+```go
 package main
 
 import (

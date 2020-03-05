@@ -10,7 +10,7 @@ Adding too many indexes has a cost, we are going to run through some example dat
 impact it looks like
 
 <div style="text-align: center;">
-  <img src="/assets/insert-performance-indexes.png" width="400">
+  <img src="../../assets/insert-performance-indexes.png" width="400">
   <div>
     (chart explination down below)
   </div>
@@ -60,7 +60,7 @@ CREATE INDEX widgets_name5 on widgets (field5); truncate table widgets;
 From this we can see an upward trend with number of indexes slowing down insert time. By using 0 indexes as the baseline we can make a pretty chart for visualization:
 
 <div style="text-align: center;">
-  <img src="/assets/insert-performance-indexes.png" width="400">
+  <img src="../../assets/insert-performance-indexes.png" width="400">
 </div>
 
 For extreme performance, have 0 indexes. This is a little hard to get to because normally we want to select things, at least by a primary key. If we are maximizing for insert speed it will be pretty slow without an index for the read side. An option here is a read replica, and deal with duplicate primary keys downstream on the reader side instead of writer side.

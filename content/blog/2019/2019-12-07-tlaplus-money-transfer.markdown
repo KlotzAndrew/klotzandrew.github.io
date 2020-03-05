@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TLA+ verifying a money transfer"
-date: 2019-12-07 7:00:00 -0500
+date: 2019-12-07 17:00:00 -0500
 categories: tlaplus, concurrency
 image: tlaplus_transfer.png
 ---
@@ -61,7 +61,7 @@ Now lets say these balances are on different systems (microservices maybe?) that
 Now how to counteract the loss of atomicity? We can start with awaiting on a locked flag that only one process at a time can hold. Running this and having it fail might come as a little surprise, since the lock prevents concurrency of processes for balance changes, but that is not where our invariant is being violated.
 
 <div style="text-align: center; margin-bottom: 2rem;">
-  <img src="/assets/tlaplus_transfer.png" alt="tlaplus transfer" width="700">
+  <img src="../../assets/tlaplus_transfer.png" alt="tlaplus transfer" width="700">
   <div>(what was the invariant again?)</div>
 </div>
 

@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "PostgreSQL pivot tables, selecting has-many relationships"
-date:   2017-12-16 17:20:00 -0500
+title: "PostgreSQL pivot tables, selecting has-many relationships"
+date: 2017-12-16 17:20:00 -0500
 categories: sql
 ---
 
@@ -29,7 +29,7 @@ Amy  | VP       |          | 10
 ```
 
 ##### Raw data:
-{% highlight sql %}
+```sql
 SELECT * FROM contacts;
 
 -- id | name
@@ -54,7 +54,7 @@ select * from match_categories;
 --  1 | Position
 --  2 | Industry
 --  3 | NPS
-{% endhighlight %}
+```
 
 The first thing we need to do is `CREATE extension tablefunc;`, this will let us
 use the `crosstab` function.
@@ -62,14 +62,14 @@ use the `crosstab` function.
 Now lets take a quick high level look at how the crosstab function works for our case. We will be passing in 2 string arguments, and provide a schema for the
 results to be returned in.
 
-{% highlight sql %}
+```sql
 SELECT * FROM crosstab(
   TEXT source_sql,
   TEXT category_sql
 ) AS ct (
   result_schema
 )
-{% endhighlight %}
+```
 
 The first argument 'source_sql' is a string that returns 3 columns in this order
 * __row_name column__, how the table extends vertically
@@ -77,9 +77,9 @@ The first argument 'source_sql' is a string that returns 3 columns in this order
 * __value column__, the values populating the columns
 
 Our source_sql will be:
-{% highlight sql %}
+```sql
 SELECT contact_id, match_category_id, name FROM match_values ORDER BY 1, 2
-{% endhighlight %}
+```
 
 `contact_id` is the row name, `match_category_id` is the column names, and `name`
 is the values.
@@ -91,23 +91,23 @@ no duplicates.
 
 Our category_sql will be:
 
-{% highlight sql %}
+```sql
 SELECT DISTINCT id FROM match_categories ORDER BY 1
-{% endhighlight %}
+```
 
 The results is a list of the column names and data types, for us to select from.
 
 Ours columns look like this:
-{% highlight sql %}
+```sql
 contact_id INT,
 position TEXT,
 industry TEXT,
 NPS TEXT
-{% endhighlight %}
+```
 
 Now putting it all together into a full query, we get this:
 
-{% highlight sql %}
+```sql
 SELECT * FROM crosstab (
   $$ SELECT contact_id, match_category_id, name FROM match_values ORDER BY 1, 2 $$,
   $$ SELECT DISTINCT match_category_id FROM match_values ORDER BY 1 $$
@@ -123,14 +123,14 @@ SELECT * FROM crosstab (
 -- | 1          | Director | Media    |      |
 -- | 2          |          | Banking  | 8    |
 -- | 3          | VP       |          | 10   |
-{% endhighlight %}
+```
 
 The result is pretty close to what we want, but instead of contact_id we really
 want a column that has the contact name. What we can do is combine our retults
 with a Common Table Expression using `WITH`, and join that with contacts to get exactly
 what we were looking for
 
-{% highlight sql %}
+```sql
 WITH pivot_table AS (
   SELECT * from crosstab (
     $$ SELECT contact_id, match_category_id, name FROM match_values ORDER BY 1 $$,
@@ -156,7 +156,7 @@ LEFT JOIN pivot_table ON contacts.id = pivot_table.contact_id;
 -- | Jon  | Director | Media    |      |
 -- | Beth |          | Banking  | 8    |
 -- | Amy  | VP       |          | 10   |
-{% endhighlight %}
+```
 
 Now we can return exactly what we were looking for in a single query! Our
 database can do more of the heavy lifting and we can avoid an alternative of
@@ -165,7 +165,7 @@ multiple queries and piecing the data together somewhere else.
 If you want to try this out yourself, here is the SQL to generate the data in
 your own database:
 
-{% highlight sql %}
+```sql
 CREATE extension tablefunc;
 
 CREATE TABLE contacts(
@@ -208,4 +208,4 @@ VALUES
   ( 4, 2, 3, '8'),
   ( 5, 3, 1, 'VP'),
   ( 6, 3, 3, '10');
-{% endhighlight %}
+```

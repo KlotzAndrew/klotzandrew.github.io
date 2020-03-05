@@ -12,7 +12,7 @@ mixed in with business logic - then Open Policy Agent can help! If you have not 
 it is really worth checking out, it is a declarative way to push authorization outside
 your business logic in an extremely scalable way.
 
-<img src="/assets/opa-admin-all-on.png" width="700"  />
+<img src="../../assets/opa-admin-all-on.png" width="700"  />
 
 Overview:
 
@@ -182,7 +182,7 @@ Next policy is for the managers, we use ` http_api.employees[_] = userID` to
 wildcard any field in the employees array to the value userID, using that
 for the allowed path `"accounts/:userID"`.
 
-```
+```opa
 package httpapi.authz
 
 import input as http_api
@@ -205,7 +205,7 @@ We then assign userID from the input, which we use for checking the path
 `"rewards/:userID/redeem"`. Lastly we check if the api method is either GET/POST
 by checking array inclusion.
 
-```
+```opa
 package httpapi.authz
 
 import input as http_api
@@ -223,7 +223,7 @@ allowPremium {
 
 For our test, we check the methods and the premium role.
 
-```
+```opa
 package httpapi.authz
 
 test_get_premium_allowed {
@@ -287,7 +287,7 @@ go run main.go authz-middleware.go
 cd opa-admin && npm install && npm start
 ```
 
-<img src="/assets/opa-admin-one-on.png" width="700"  />
+<img src="../../assets/opa-admin-one-on.png" width="700"  />
 
 The admin page is running on http://0.0.0.0:3000. Toggle on some policies
 and test out some http requests!

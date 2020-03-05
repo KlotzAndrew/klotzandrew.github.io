@@ -11,7 +11,7 @@ especially if you happen to be exporting data out of postgres with the `COPY`
 command. We're going to take a quick look at importing with the imdb movie
 dataset (docs here: [http://www.imdb.com/interfaces](http://www.imdb.com/interfaces)).
 
-![abc]({{ "/assets/neo4j-data-import.png"}})
+![abc](../../assets/neo4j-data-import.png)
 
 There is more than one way to import data into Neo4j, like the cypher
 command `LOAD CSV` which is recommended for medium sized datasets up to 10M
@@ -35,6 +35,7 @@ importer ignores relationships with no nodes instead of throwing errors (them
 imdb dataset we are using references a few missing nodes)
 
 Nodes: `<primary_key_name>:ID,attr1,attr2,:LABEL`
+
 * `<primary_key_name>:Id` is the id of our node, can be any id name like
 `movieId:ID` or `personId:ID`
 * `:LABEL` is any label attached

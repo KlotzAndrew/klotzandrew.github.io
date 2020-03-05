@@ -13,7 +13,7 @@ queries that helped me get familiarity with the Cypher syntax
 
 We will start off by finding the actors who have acted in the fewest movies
 in our dataset:
-```
+```cypher
 MATCH (n)-[r:ACTED_IN]->()
 RETURN n, count(r) AS num
 ORDER BY num
@@ -26,7 +26,7 @@ variable `r`. We then count, order, and return with a limit.
 
 Taking our two actors Takeshi Kitano and Carrie Fisher, we are going to find
 the shortest path between them:
-```
+```cypher
 MATCH p=shortestPath(
   (a:Person {name:"Takeshi Kitano"})-[*]-(b:Person {name:"Carrie Fisher"})
 )
@@ -37,10 +37,10 @@ RETURN p
 we have to do is identify the two nodes we are searching with and return the
 result - which looks pretty cool:
 
-![fisher_to_kitano]({{ "/assets/fisher_to_kitano.png"}})
+![fisher_to_kitano](../../assets/fisher_to_kitano.png)
 
 Keanu Reeves was in that list, so lets see all the actors who acted with him
-```
+```cypher
 MATCH (keanu:Person {name:"Keanu Reeves"})-[:ACTED_IN]->(m)<-[:ACTED_IN]-(coActors)
 RETURN coActors, m, keanu
 ```
@@ -51,4 +51,4 @@ another node, which we bind to `m`, and on the other side nodes that have an
 inverse `:ACTED_IN` relationship. The syntax is pretty straight forward, and
 the results are powerful
 
-![keanu_coactors]({{ "/assets/keanu_coactors.png"}})
+![keanu_coactors](../../assets/keanu_coactors.png)
