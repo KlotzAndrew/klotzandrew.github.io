@@ -5,7 +5,6 @@ import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -25,31 +24,16 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
       <article>
-        <header>
-          <h1
-            style={{
-              marginTop: rhythm(1),
-              marginBottom: 0,
-            }}
-          >
+        <header className="mb-8">
+          <h1 className="text-3xl font-bold mb-2 leading-none tracking-tight">
             {post.frontmatter.title}
           </h1>
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
-            }}
-          >
+          <p className="text-gray-600">
             {post.frontmatter.date}
           </p>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
+        <section className="markdown" dangerouslySetInnerHTML={{ __html: post.html }} />
+        <hr />
         <footer>
           <Bio />
         </footer>

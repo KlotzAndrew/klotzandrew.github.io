@@ -1,0 +1,290 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+/* purgecss start ignore */
+/* Markdown Styles */
+/* Global */
+.markdown {
+  color: #4a5568;
+  line-height: 1.625
+}
+
+.markdown>:first-child {
+  margin-top: 0
+}
+
+.markdown>*+* {
+  margin-top: 1.5rem
+}
+
+.markdown>ol>*+*,.markdown>ul>*+* {
+  margin-top: 1rem
+}
+
+.markdown .subnav,.subnav.markdown {
+  display: flex;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: .5rem;
+  border-bottom-width: 2px;
+  border-color: #e2e8f0
+}
+
+.markdown .subnav .subnav-link,.subnav-link.markdown .subnav,.subnav-link.subnav.markdown,.subnav.markdown .subnav-link {
+  margin-right: 1.5rem;
+  line-height: 1;
+  color: #1a202c;
+  font-size: .875rem
+}
+
+.markdown>.heading:before,.markdown>h2:before,.markdown>h3:before {
+  display: block;
+  height: 6rem;
+  margin-top: -6rem;
+  visibility: hidden;
+  content: ""
+}
+
+.markdown>hr {
+  border-width: 0 0 2px;
+  border-color: #edf2f7;
+  margin-top: 4rem;
+  margin-bottom: 4rem
+}
+
+.markdown>a,.markdown>ol li a,.markdown>p a,.markdown>ul li a,a.markdown {
+  color: #4299e1;
+  text-decoration: underline;
+  font-weight: 500
+}
+
+.markdown>a:hover,.markdown>ol li a:hover,.markdown>p a:hover,.markdown>ul li a:hover,a.markdown:hover {
+  color: #2b6cb0
+}
+
+.markdown>a strong,.markdown>ol li a strong,.markdown>p a strong,.markdown>ul li a strong,a.markdown strong {
+  color: #4299e1
+}
+
+.markdown>a code,.markdown>ol li a code,.markdown>p a code,.markdown>ul li a code,a.markdown code {
+  text-decoration: underline;
+  color: #4299e1
+}
+
+.markdown>p strong,.markdown>ul strong {
+  font-weight: 600;
+  color: #2d3748
+}
+
+.markdown>ol li :not(pre) code,.markdown>ol li>code,.markdown>p code,.markdown>ul li :not(pre) code,.markdown>ul li>code,p.markdown code.markdown {
+  display: inline-block;
+  background-color: #f7fafc;
+  border-radius: .125rem;
+  font-size: .875rem;
+  padding-left: .25rem;
+  padding-right: .25rem;
+  line-height: 1;
+  white-space: nowrap;
+  color: #805ad5;
+  font-family: Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+  vertical-align: baseline;
+  font-weight: 400
+}
+
+.markdown>ol li strong code,.markdown>p strong code,.markdown>ul li strong code {
+  font-weight: 600
+}
+
+.markdown>pre,pre.markdown {
+  font-family: Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+  border-radius: .5rem;
+  font-weight: 400;
+  scrollbar-width: none
+}
+
+.markdown>pre::-webkit-scrollbar,pre.markdown::-webkit-scrollbar {
+  display: none
+}
+
+.markdown>blockquote,blockquote.markdown {
+  font-style: italic;
+  color: #1a202c;
+  font-size: .875rem
+}
+
+.markdown>h1,h1.markdown {
+  margin-bottom: .25rem;
+  line-height: 1;
+  color: #1a202c;
+  font-weight: 300;
+  font-size: 1.875rem
+}
+
+.markdown>h2,h2.markdown {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  color: #1a202c;
+  line-height: 1;
+  font-weight: 400;
+  font-size: 1.5rem
+}
+
+.markdown>h2+h3 {
+  margin-top: 1.5rem
+}
+
+.markdown>h3,h3.markdown {
+  margin-top: 3rem;
+  margin-bottom: -.75rem;
+  color: #1a202c;
+  line-height: 1.25;
+  font-weight: 500;
+  font-size: 1.25rem
+}
+
+.markdown>h4,h4.markdown {
+  margin-top: 3rem;
+  margin-bottom: 0;
+  color: #1a202c;
+  line-height: 1.375;
+  font-weight: 500;
+  font-size: 1.125rem
+}
+
+.markdown>h1+p {
+  margin-top: 2rem
+}
+
+.markdown>h1>code,.markdown>h2>code,.markdown>h3>code,.markdown>h4>code {
+  color: #805ad5;
+  font-family: Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace
+}
+
+.markdown>h3>code {
+  font-size: 1.125rem;
+  padding-left: .25rem;
+  padding-right: .25rem;
+  background-color: #f7fafc
+}
+
+.markdown>h4>code {
+  font-size: 1rem;
+  padding-left: .25rem;
+  padding-right: .25rem;
+  background-color: #f7fafc
+}
+
+.markdown>blockquote>p,.markdown>p,p.markdown {
+  font-size: 1rem;
+  margin-top: 1.5rem
+}
+
+.markdown>ul:not(.list-none) {
+  padding-left: 0;
+  list-style-type: none
+}
+
+.markdown>ul:not(.list-none) li {
+  position: relative;
+  padding-left: 1.25rem
+}
+
+.markdown>ul:not(.list-none) li:before {
+  position: absolute;
+  left: 0;
+  color: #cbd5e0;
+  display: inline-block;
+  margin-right: .75rem;
+  content: "\2022"
+}
+
+.markdown>ol {
+  list-style-type: none;
+  counter-reset: item
+}
+
+.markdown>ol>li {
+  position: relative;
+  padding-left: 2.5rem
+}
+
+.markdown>ol>li:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: #e2e8f0;
+  border-radius: 9999px;
+  color: #4a5568;
+  font-size: .75rem;
+  font-weight: 700;
+  content: counter(item);
+  counter-increment: item
+}
+
+.markdown>:not(pre):not(h1):not(h2):not(h3):not(h4)>code,.markdown>ol code,.markdown>ul code {
+  background-color: #f7fafc;
+  font-size: .875rem;
+  line-height: 1.5
+}
+
+.markdown>ol li pre,.markdown>pre,.markdown>ul li pre,pre.markdown {
+  display: flex;
+  padding: 0;
+  background-color: #2d3748;
+  font-size: .875rem;
+  line-height: 1.5
+}
+
+.markdown>ol li pre code,.markdown>pre code,.markdown>ul li pre code,pre code.markdown {
+  padding: 1rem
+}
+
+.markdown>table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse
+}
+
+.markdown>table th {
+  font-size: .875rem;
+  font-weight: 600;
+  color: #4a5568;
+  padding: .5rem;
+  background-color: #f7fafc
+}
+
+.markdown>table tr:hover {
+  background-color: #f7fafc
+}
+
+.markdown>table td {
+  padding: .5rem;
+  border-top-width: 1px;
+  border-color: #edf2f7;
+  font-size: .875rem
+}
+
+.markdown>table td code {
+  background-color: #f7fafc;
+  padding-left: .25rem;
+  padding-right: .25rem;
+  font-family: Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+  font-size: .75rem;
+  color: #6b46c1;
+  vertical-align: baseline
+}
+
+.markdown>table td:first-child {
+  border-color: #e2e8f0
+}
+
+/* purgecss end ignore */

@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Andrew Klotz's Blog`,
+    title: `Andrew Klotz`,
     author: {
       name: `Andrew Klotz`,
-      summary: `who builds tools to help people to do their best.`,
+      summary: `Builing tools to help people to do their best.`,
     },
-    description: `Andrew Klotz's blog`,
+    description: `Andrew Klotz`,
     siteUrl: `https://klotzandrew.com/`,
     social: {
       twitter: `klotzandrew`,
@@ -77,9 +77,9 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: `gatsby-plugin-postcss`,
       options: {
-        pathToConfigModule: `src/utils/typography`,
+        postCssPlugins: [require(`tailwindcss`), require(`autoprefixer`)],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
