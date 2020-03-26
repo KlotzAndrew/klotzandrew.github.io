@@ -60,6 +60,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     let value = slug.split("/")
     value.splice(0, 2)
     value = value.join("/")
+    value = value.replace(/^(.+?)\/*?$/, "$1");
 
     console.log(value)
     createNodeField({
