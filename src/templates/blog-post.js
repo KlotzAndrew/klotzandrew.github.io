@@ -33,30 +33,22 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </p>
         </header>
         <section className="markdown" dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr />
+        <hr className="my-12" />
         <footer>
           <Bio />
         </footer>
       </article>
 
-      <nav>
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
+      <nav className="my-12">
+        <ul className="flex flex-wrap">
+          <li className="my-2 no-underline hover:underline text-blue-500 text-lg">
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
-          <li>
+          <li className="my-2 no-underline hover:underline text-blue-500 text-lg">
             {next && (
               <Link to={next.fields.slug} rel="next">
                 {next.frontmatter.title} →
@@ -66,7 +58,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </ul>
       </nav>
 
-      <CommentCount config={disqusConfig} placeholder={'...'} />
+      {/* <CommentCount config={disqusConfig} placeholder={'...'} /> */}
       <Disqus config={disqusConfig} />
     </Layout>
   )
