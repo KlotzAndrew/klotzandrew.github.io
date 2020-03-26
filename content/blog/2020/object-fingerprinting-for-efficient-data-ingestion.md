@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Object Fingerprinting for efficent data ingestion"
+title: "Object Fingerprinting for Efficient Data Ingestion"
 date: 2020-03-25 17:00:00 -0500
 categories: golang, json, path of exile
 image: object-fingerprinting.png
