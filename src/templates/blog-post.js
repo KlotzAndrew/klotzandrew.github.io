@@ -11,6 +11,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
 
+  const image = post.frontmatter.image ? post.frontmatter.image.childImageSharp.resize : null
+
   let disqusConfig = {
     url: location.href,
     identifier: post.id,
@@ -22,7 +24,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
-        image={post.frontmatter.image}
+        image={image}
       />
       <article>
         <header className="mb-8">
@@ -79,10 +81,18 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       html
       frontmatter {
+        image: featured {
+          childImageSharp {
+            resize(width: 1200) {
+              src
+              height
+              width
+            }
+          }
+        }
         title
         date(formatString: "MMMM DD, YYYY")
         description
-        image
       }
     }
   }

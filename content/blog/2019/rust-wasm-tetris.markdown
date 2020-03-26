@@ -3,7 +3,7 @@ layout: post
 title: "Rust, wasm, and tetris"
 date: 2019-11-17 17:00:00 -0500
 categories: rust, wasm, tetris
-image: tetris_rust_wasm_2.png
+featured: images/tetris_rust_wasm_2.png
 ---
 
 WASM has been making a lot of progress recently so I was looking for a small project to run through and tetris with rust came to mind. Its small enough to understand easily and complicated enough that it is not quite a ‘hello world’ program. We are mostly going to be looking at the interaction between WASM and the browser, there is <a href="https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/">interesting stuff happening on top of WASM like WASI</a>. The code for tetris is not relevant to the main goal (maybe a later article).

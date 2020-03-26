@@ -3,7 +3,7 @@ layout: post
 title: "Graph queries with Cypher in Neo4j"
 date: 2018-01-03 17:20:00 -0500
 categories: neo4j, cypher
-image: fisher_to_kitano.png
+featured: images/keanu_coactors.png
 ---
 
 Neo4j uses a declarative language called Cypher, that lets us easily make
@@ -37,7 +37,7 @@ RETURN p
 we have to do is identify the two nodes we are searching with and return the
 result - which looks pretty cool:
 
-![fisher_to_kitano](../../assets/fisher_to_kitano.png)
+![fisher_to_kitano](images/fisher_to_kitano.png)
 
 Keanu Reeves was in that list, so lets see all the actors who acted with him
 ```cypher
@@ -51,4 +51,4 @@ another node, which we bind to `m`, and on the other side nodes that have an
 inverse `:ACTED_IN` relationship. The syntax is pretty straight forward, and
 the results are powerful
 
-![keanu_coactors](../../assets/keanu_coactors.png)
+![keanu_coactors](images/keanu_coactors.png)

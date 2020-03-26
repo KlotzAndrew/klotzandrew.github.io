@@ -3,7 +3,7 @@ layout: post
 title: "Neo4j bulk data import"
 date: 2018-01-01 17:20:00 -0500
 categories: neo4j, ruby
-image: neo4j-data-import.png
+featured: images/neo4j-data-import.png
 ---
 
 Neo4j has a csv import tool that makes importing large datasets pretty easy,
@@ -11,7 +11,7 @@ especially if you happen to be exporting data out of postgres with the `COPY`
 command. We're going to take a quick look at importing with the imdb movie
 dataset (docs here: [http://www.imdb.com/interfaces](http://www.imdb.com/interfaces)).
 
-![abc](../../assets/neo4j-data-import.png)
+![abc](images/neo4j-data-import.png)
 
 There is more than one way to import data into Neo4j, like the cypher
 command `LOAD CSV` which is recommended for medium sized datasets up to 10M

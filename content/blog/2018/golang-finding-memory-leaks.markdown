@@ -3,6 +3,7 @@ layout: post
 title: "Golang finding memory leaks"
 date: 2018-10-29 17:20:00 -0500
 categories: golang, SRE, pprof
+featured: images/mem-leak-sawtooth.png
 ---
 
 We are going to look at finding memory leaks in golang using a tool called
@@ -14,7 +15,7 @@ the application runs out of available memory and crashes. The bright side is
 that it is sometimes easy to identify from looking at a memory usage graph that
 forms a "sawtooth" (an upward trending that falls of a clif:
 
-<img src="../../assets/mem-leak-sawtooth.png" width="800">
+<img src="images/mem-leak-sawtooth.png" width="800">
 
 Golang has a powerful tool called pprof that can make finding these leaks much
 easier. We're going to use an example webserver that we suspect has a leak in it
@@ -101,12 +102,12 @@ so we are going to tell pprof to output png of our memory usage with the
 command `go tool pprof -png http://localhost:6060/debug/pprof/heap`, and we
 get an output name of a .png and a .pb.gz file, here is what our png looks like:
 
-<img src="../../assets/profile001.png" width="400">
+<img src="images/profile001.png" width="400">
 
 Since this is our first profile, we can use it as a baseline, running the profile
 command a few seconds later:
 
-<img src="../../assets/profile002.png" width="400">
+<img src="images/profile002.png" width="400">
 
 We can see some numbers got bigger. If we are still not sure where the leak is,
 we can us a previous snaphot as
@@ -114,7 +115,7 @@ a base to show the diff (using a .pb.gz file that we had just created):
 
 `go tool pprof -base /pprof.alloc_objects.alloc_space.inuse_objects.inuse_space.047.pb.gz -png http://localhost:6060/debug/pprof/heap`
 
-<img src="../../assets/profile003.png" width="400">
+<img src="images/profile003.png" width="400">
 
 What is really usefull here is that not only can we can see the total memory
 used by our application, but also

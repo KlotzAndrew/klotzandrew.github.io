@@ -19,6 +19,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
             title
             description
             social { twitter }
+            siteUrl
           }
         }
       }
@@ -26,7 +27,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const ogImage = image // || defaultOpenGraphImage;
+  const ogImage = image && image.src ? `${site.siteMetadata.siteUrl}/${image.src}` : null // || defaultOpenGraphImage;
 
   return (
     <Helmet
@@ -53,22 +54,6 @@ const SEO = ({ description, lang, meta, title, image }) => {
           content: `website`,
         },
         {
-          property: `og:image`,
-          content: ogImage,
-        },
-        {
-          property: `og:image:height`,
-          content: 820,
-        },
-        {
-          property: `og:image:width`,
-          content: 512,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
           name: `twitter:creator`,
           content: site.siteMetadata.social.twitter,
         },
@@ -80,7 +65,33 @@ const SEO = ({ description, lang, meta, title, image }) => {
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(meta)}
+      ].concat(
+        ogImage
+          ? [
+            {
+              property: "og:image",
+              content: ogImage,
+            },
+            {
+              property: "og:image:width",
+              content: `${image.width}`,
+            },
+            {
+              property: "og:image:height",
+              content: `${image.height}`,
+            },
+            {
+              name: "twitter:card",
+              content: "summary_large_image",
+            },
+          ]
+          : [
+            {
+              name: "twitter:card",
+              content: "summary",
+            },
+          ]
+      ).concat(meta)}
     />
   )
 }

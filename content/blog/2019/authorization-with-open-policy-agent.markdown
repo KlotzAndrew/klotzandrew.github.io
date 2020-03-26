@@ -3,7 +3,7 @@ layout: post
 title: "Web authorization with Open Policy Agent"
 date: 2019-04-28 17:20:00 -0500
 categories: golang, web, authorization, open policy agent, opa
-image: opa-admin-all-on.png
+featured: images/opa-admin-all-on.png
 ---
 
 So maybe you upgraded our authentication logic to no longer be a system bottleneck
@@ -12,7 +12,7 @@ mixed in with business logic - then Open Policy Agent can help! If you have not 
 it is really worth checking out, it is a declarative way to push authorization outside
 your business logic in an extremely scalable way.
 
-<img src="../../assets/opa-admin-all-on.png" width="700"  />
+<img src="images/opa-admin-all-on.png" width="700"  />
 
 Overview:
 
@@ -287,7 +287,7 @@ go run main.go authz-middleware.go
 cd opa-admin && npm install && npm start
 ```
 
-<img src="../../assets/opa-admin-one-on.png" width="700"  />
+<img src="images/opa-admin-one-on.png" width="700"  />
 
 The admin page is running on http://0.0.0.0:3000. Toggle on some policies
 and test out some http requests!

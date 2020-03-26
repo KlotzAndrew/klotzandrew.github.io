@@ -3,7 +3,7 @@ layout: post
 title: "TLA+ verifying a money transfer"
 date: 2019-12-07 17:00:00 -0500
 categories: tlaplus, concurrency
-image: tlaplus_transfer.png
+featured: images/tlaplus_transfer.png
 ---
 
 What could go wrong with transferring money between two accounts? I have written about how easy it is to get wrong (giving away or losing money) and patterns for preventing problems like with the <a href="http://klotzandrew.com/blog/dropped-messages-outbox-pattern">outbox pattern</a>. <a href="https://lamport.azurewebsites.net/tla/tla.html">TLA+</a> provides a language and tooling for proving systems that might be able to help us understand if we have design flaws. <a href="https://learntla.com/introduction/example/">The first example from TLA+</a> is about transferring money from alice to bob, this is the basic premise:
@@ -61,7 +61,7 @@ Now lets say these balances are on different systems (microservices maybe?) that
 Now how to counteract the loss of atomicity? We can start with awaiting on a locked flag that only one process at a time can hold. Running this and having it fail might come as a little surprise, since the lock prevents concurrency of processes for balance changes, but that is not where our invariant is being violated.
 
 <div style="text-align: center; margin-bottom: 2rem;">
-  <img src="../../assets/tlaplus_transfer.png" alt="tlaplus transfer" width="700">
+  <img src="images/tlaplus_transfer.png" alt="tlaplus transfer" width="700">
   <div>(what was the invariant again?)</div>
 </div>
 

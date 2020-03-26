@@ -4,10 +4,10 @@ title: "Screenshot Blur as Lockscreen on OSX"
 date: 2019-10-22 17:00:00 -0500
 categories: hammerspoon, imagemagick, lua, bash
 description: Take a screenshot, blur it, and use it as the screensaver with a little lock icon on top.
-image: screenshot-blur-lockscreen.png
+featured: images/screenshot-blur-lockscreen.png
 ---
 
-![Blurred screenshot](../../assets/screenshot-blur-lockscreen.png)
+![Blurred screenshot](images/screenshot-blur-lockscreen.png)
 
 Take a screenshot, blur it, and use it as the screensaver with a little lock icon on top.
 

@@ -3,7 +3,8 @@ layout: post
 title: "Docker dynamic environment variables"
 date: 2020-02-15 17:00:00 -0500
 categories: docker, datadog, ecs, aws
-image: docker.png
+featured: images/docker.png
+description: ""
 ---
 
 You might have a use case to dynamically add environment variables to docker containers. If you have ephemoral hosts and using something like ECS, Registrator or DataDog, this could mean that the host ip address needs to be set as an environment variable. The challenge here is that because the value is only known at runtime, we cannot bake it into the docker image.

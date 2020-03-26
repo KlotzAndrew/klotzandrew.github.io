@@ -3,6 +3,7 @@ layout: post
 title: "Container from scratch"
 date: 2018-09-12 17:20:00 -0500
 categories: docker, containers
+featured: images/cfs-container.png
 ---
 
 We are doing to be building a docker from scratch, and I do not mean a Dockerfile
@@ -79,7 +80,7 @@ The above code takes arguments starting with `run` and passes them to `exec.Comm
 So far this looks the same as any program
 that is making a call out to the system (although with arbitrarty user input).
 
-![cfs exec](../../assets/cfs-exec.png)
+![cfs exec](images/cfs-exec.png)
 
 Running the above with `go run main.go run /bin/bash`, we have a container running a shell - but it can see everything.
 Although it cannot see my paused vim running from the previous shell. Exiting out and we can again
@@ -138,7 +139,7 @@ func child() {
 Running again with `go run main.go /bin/bash` give us the ability to isolate
 our hostname, beacuse of: `syscall.CLONE_NEWUTS`
 
-![cfs hostname](../../assets/cfs-hostname.png)
+![cfs hostname](images/cfs-hostname.png)
 
 Our PID will not actaully show PID 1 yet even though we have `syscall.CLONE_NEWPID`, because ps also looks
 at `ls /proc` for running processes. We will be able to get to this while doing the next step.
@@ -194,7 +195,7 @@ Running `hostname` will show our containers hostname
 
 Running `ls` will show our containers filesystem
 
-![cfs hostname](../../assets/cfs-container.png)
+![cfs hostname](images/cfs-container.png)
 
 While there is much more than this to get docker working as well as it does, this
 covers the basics of getting our own namespaces to execute inside! If you want to try out more,
