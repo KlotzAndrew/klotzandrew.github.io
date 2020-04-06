@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "gh-pages": "^2.2.0",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.3",
     "tailwindcss": "^1.1.3"
   },
   "homepage": "https://klotzandrew.com",
