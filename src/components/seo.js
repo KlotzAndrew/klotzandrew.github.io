@@ -29,12 +29,13 @@ const SEO = ({ description, lang, meta, title, image }) => {
   const metaDescription = description || site.siteMetadata.description
   const ogImage = image && image.src ? `${site.siteMetadata.siteUrl}/${image.src}` : null // || defaultOpenGraphImage;
 
+
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
+      title={title || "Blog"}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
@@ -92,7 +93,9 @@ const SEO = ({ description, lang, meta, title, image }) => {
             },
           ]
       ).concat(meta)}
-    />
+    >
+      <script data-ad-client="ca-pub-2400576190409955" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    </Helmet>
   )
 }
 
