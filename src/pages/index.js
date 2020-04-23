@@ -14,7 +14,7 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="" />
 
-      <div className="mt-12 text-center">
+      <div className="mt-20 text-center">
         <Image
           className="my-8 m-auto"
           fluid={data.avatar.childImageSharp.fluid}
