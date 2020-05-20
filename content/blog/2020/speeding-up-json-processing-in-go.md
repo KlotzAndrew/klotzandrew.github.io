@@ -3,7 +3,7 @@ layout: post
 title: "Speeding up json processing in go"
 date: 2020-05-17 17:00:00 -0500
 categories: golang
-featured: images/input-process.png
+featured: images/golang-unmarshal-readall.png
 description: ""
 ---
 
