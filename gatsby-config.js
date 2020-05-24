@@ -3,7 +3,7 @@ module.exports = {
     title: `Andrew Klotz`,
     author: {
       name: `Andrew Klotz`,
-      summary: `Builing tools to help people to do their best.`,
+      summary: `Building tools to help people to do their best.`,
     },
     description: `Andrew Klotz`,
     siteUrl: `https://klotzandrew.com/`,
