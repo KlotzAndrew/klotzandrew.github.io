@@ -43,7 +43,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       </article>
 
       <nav className="my-12">
-        <ul className="flex flex-wrap">
+        <ul className="flex flex-wrap justify-between">
           <li className="my-2 no-underline hover:underline text-blue-500 text-lg">
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
