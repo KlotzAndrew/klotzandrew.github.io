@@ -3,7 +3,7 @@ layout: post
 title: "Quickly debugging Postgres problems"
 date: 2020-08-15 17:00:00 -0500
 categories: postgres, debugging
-featured: images/pg.png
+featured: images/pg.jpg
 description: ""
 ---
 
