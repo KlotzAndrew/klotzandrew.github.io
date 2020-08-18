@@ -43,6 +43,11 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
       </div>
+
+      <hr className="my-12" />
+      <footer>
+        <Bio />
+      </footer>
     </Layout>
   )
 }
