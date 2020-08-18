@@ -7,7 +7,9 @@ featured: images/pg.png
 description: ""
 ---
 
-One of these queries might quickly narrow down a problem with your Postgres database. This article will be looking through the lens of _uh-oh! something just happened_, and there is a really good chance the culprit has to do with either: queries, indexes, or disk space. Postgres exposes a lot of internal information in system tables like `pg_stat_activity` and `pg_stat_user_tables`, if you are not already familiar with them we will be looking at a few as we go:
+# Uh-oh! something just happened
+
+One of these queries might quickly narrow down a problem with your Postgres database. With a little luck, the culprit has to do with either: queries, indexes, or disk space. Postgres exposes a lot of internal information in system tables like `pg_stat_activity` and `pg_stat_user_tables`, if you are not already familiar with them we will be looking at a few as we go:
 
  * Queries, `pg_stat_activity`
     * Long running queries?
