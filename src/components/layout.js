@@ -19,7 +19,7 @@ const Layout = ({ location, title, children }) => {
   </div>
 
   return (
-    <div className="max-w-3xl m-auto">
+    <div className="max-w-4xl m-auto">
       <div className="mx-6">
         <header>{header}</header>
         <hr className="mb-8" />
