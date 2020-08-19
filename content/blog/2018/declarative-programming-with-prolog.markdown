@@ -3,6 +3,7 @@ layout: post
 title: "Declarative Programming with Prolog"
 date: 2018-02-11 17:20:00 -0500
 categories: prolog
+featured: images/prolog-logo.png
 ---
 
 Prolog is a declarative language around logic programming, where we can specify

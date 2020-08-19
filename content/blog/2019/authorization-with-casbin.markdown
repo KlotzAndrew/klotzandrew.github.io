@@ -3,6 +3,7 @@ layout: post
 title: "Web authorization with Casbin"
 date: 2019-08-16 17:20:00 -0500
 categories: web, authorization, casbin, golang
+featured: images/casbin-logo.png
 ---
 
 Casbin is an authorization library that supports ACL, RBAC, ABAC permissions on
