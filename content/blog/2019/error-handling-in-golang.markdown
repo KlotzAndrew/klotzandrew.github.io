@@ -3,6 +3,7 @@ layout: post
 title: "Golang custom error types with stack trace"
 date: 2019-04-28 17:20:00 -0500
 categories:  golang
+featured: images/go_custom_error_types.png
 ---
 
 Golang error handling is fun because it is a first class citizen in the language,
@@ -108,13 +109,37 @@ types. Where if our ErrorNotFound instead conformed to an interface, we could ch
 against that, and just import an interface instead of a struct:
 
 ```go
-type InterfaceErrorNotFound interface {
-  IsNotFound() bool
+package main
+
+import (
+	//"errors"
+	"fmt"
+)
+
+type ErrorNotFound struct{ msg string }
+
+func (e *ErrorNotFound) IsNotFound() bool { return true }
+func (e *ErrorNotFound) Error() string    { return e.msg }
+
+type IErrorNotFound interface {
+	error
+	IsNotFound() bool
 }
 
-type ErrorNotFound error
+func makeError() error {
+	return &ErrorNotFound{"foo"}
+}
 
-func (e ErrorNotFound) IsNotFound() { true }
+func main() {
+	err := makeError()
 
-func IsErrorNotFound
+	// type check on interface and call interface method
+	if e, ok := err.(IErrorNotFound); ok && e.IsNotFound() {
+		fmt.Println("error not found: ", e)
+	}
+}
 ```
+
+Golang has [recently implemented][1] this style of approach in the net package.
+
+[1]: https://golang.org/src/net/net.go?s=13499:13620#L386

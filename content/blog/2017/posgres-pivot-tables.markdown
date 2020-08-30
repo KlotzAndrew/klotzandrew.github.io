@@ -3,6 +3,7 @@ layout: post
 title: "PostgreSQL pivot tables, selecting has-many relationships"
 date: 2017-12-16 17:20:00 -0500
 categories: sql
+featured: images/pivot_tables.png
 ---
 
 PostgreSQL has a useful function called `crosstab` that makes selecting

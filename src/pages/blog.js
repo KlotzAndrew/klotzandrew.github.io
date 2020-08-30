@@ -17,7 +17,7 @@ const BlogIndex = ({ data, location }) => {
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           const img = node.frontmatter.featured && node.frontmatter.featured.childImageSharp.fluid
-          if (!node.frontmatter.title) return <div></div>
+          if (!node.frontmatter.title) return <div key={node.fields.slug}></div>
 
           return (
             <article className="mx-2 mb-12 w-64" key={node.fields.slug}>

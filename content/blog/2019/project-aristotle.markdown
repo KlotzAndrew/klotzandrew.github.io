@@ -3,6 +3,7 @@ layout: post
 title: "What does an effective team look like"
 date: 2019-04-17 17:20:00 -0500
 categories: management, teamwork
+featured: images/project_aristotle.png
 ---
 
 If you are building an effective team, do you know what you are building towards?

@@ -3,6 +3,7 @@ layout: post
 title: "Debugging slow PostgreSQL queries"
 date: 2018-01-04 17:20:00 -0500
 categories: postgresql
+featured: images/slow_psql_queries.png
 ---
 
 If production is on fire from slow queries, the quick command to identify them

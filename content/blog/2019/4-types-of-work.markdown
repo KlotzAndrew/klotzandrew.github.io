@@ -3,6 +3,7 @@ layout: post
 title: "4 Types of work"
 date: 2019-03-23 17:20:00 -0500
 categories: management, leadership
+featured: images/phoenix_project.jpg
 ---
 
 If you find yourself doing lots of work constantly but seemingly unable to get the things done that you

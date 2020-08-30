@@ -3,6 +3,7 @@ layout: post
 title: "Preventing RabbitMQ dropped messages with an Outbox"
 date: 2017-12-10 16:58:04 -0500
 categories: rabbitmq, ruby
+featured: images/rmq.png
 ---
 
 If you have dropped messages after introducing RabbitMQ (or another messaging

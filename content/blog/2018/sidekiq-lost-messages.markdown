@@ -3,6 +3,7 @@ layout: post
 title:  "Lost messages with sidekiq"
 date:   2018-01-28 16:58:04 -0500
 categories: ruby, sidekiq, redis
+featured: images/sidekiq.png
 ---
 
 Sidekiq is a great library for getting asynchronous library for quickly

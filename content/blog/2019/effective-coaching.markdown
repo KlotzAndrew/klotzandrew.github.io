@@ -3,6 +3,7 @@ layout: post
 title: "Effective coaching"
 date: 2019-01-28 17:20:00 -0500
 categories: coaching, leadership
+featured: images/the_coaching_habit.jpeg
 ---
 
 There is a really good chance you are not getting effectively coached, and you

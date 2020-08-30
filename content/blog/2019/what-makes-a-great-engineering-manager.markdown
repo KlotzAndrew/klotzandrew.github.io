@@ -3,6 +3,7 @@ layout: post
 title: "What makes a great engineering manager"
 date: 2019-03-26 17:20:00 -0500
 categories: management, leadership
+featured: images/project_oxygen.png
 ---
 
 'What makes a great engineering manager?' is a question I hear getting asked a

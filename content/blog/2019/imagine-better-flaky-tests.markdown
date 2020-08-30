@@ -3,6 +3,7 @@ layout: post
 title: "Imagining better flaky test management"
 date: 2019-06-30 17:20:00 -0500
 categories:  engineering velocity, testing
+featured: images/jenkins_tra.png
 ---
 
 If we imagined better tooling around managing flaky tests what could we come up with? One thing I have noticed in working with polyglot that often come with docker, is that while each language/framework has its own tools for testing, there are some recurring issues around flaky tests that are common in all. If it is a common problem, maybe one day there will be tooling around it that is as common as run of the mill unit testing tools.

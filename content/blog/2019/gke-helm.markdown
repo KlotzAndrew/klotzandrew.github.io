@@ -3,6 +3,7 @@ layout: post
 title: "gke ssd helm"
 date: 2019-01-28 17:20:00 -0500
 categories: gke, ssd, PersistentVolumes, helm
+featured: images/gke_ssd_helm.png
 ---
 
 By default GKE does not use SSD for Persistance Volumes (PV), which is a little
