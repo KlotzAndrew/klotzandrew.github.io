@@ -22,31 +22,29 @@ const BlogIndex = ({ data, location }) => {
           return (
             <article className="mx-2 mb-12 w-64" key={node.fields.slug}>
               <Link className="" to={node.fields.slug}>
-              <div>
-                <div className="h-48 mb-2">
-                  {img && (
-                    <Img
-                      imgStyle={{ objectFit: "contain" }}
-                      className="h-full"
-                      fluid={node.frontmatter.featured.childImageSharp.fluid}
-                    />
-                  )}
-                </div>
-                <h3>
-                  <div className="text-xl font-bold text-blue-500">
-                    {title}
+                <div>
+                  <div className="h-48 mb-2">
+                    {img && (
+                      <Img
+                        imgStyle={{ objectFit: "contain" }}
+                        className="h-full"
+                        fluid={node.frontmatter.featured.childImageSharp.fluid}
+                      />
+                    )}
                   </div>
-                </h3>
-                <small>{node.frontmatter.date}</small>
-              </div>
-              <section>
-                <p
-                  className=""
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                />
-              </section>
+                  <h3>
+                    <div className="text-xl font-bold text-blue-500">{title}</div>
+                  </h3>
+                  <small>{node.frontmatter.date}</small>
+                </div>
+                <section>
+                  <p
+                    className=""
+                    dangerouslySetInnerHTML={{
+                      __html: node.frontmatter.description || node.excerpt,
+                    }}
+                  />
+                </section>
               </Link>
             </article>
           );
