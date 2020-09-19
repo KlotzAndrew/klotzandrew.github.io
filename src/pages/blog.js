@@ -13,7 +13,7 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Blog" />
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap justify-center">
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug;
           const img = node.frontmatter.featured && node.frontmatter.featured.childImageSharp.fluid;
@@ -21,6 +21,7 @@ const BlogIndex = ({ data, location }) => {
 
           return (
             <article className="mx-2 mb-12 w-64" key={node.fields.slug}>
+              <Link className="" to={node.fields.slug}>
               <div>
                 <div className="h-48 mb-2">
                   {img && (
@@ -32,9 +33,9 @@ const BlogIndex = ({ data, location }) => {
                   )}
                 </div>
                 <h3>
-                  <Link className="text-xl font-bold text-blue-500" to={node.fields.slug}>
+                  <div className="text-xl font-bold text-blue-500">
                     {title}
-                  </Link>
+                  </div>
                 </h3>
                 <small>{node.frontmatter.date}</small>
               </div>
@@ -46,6 +47,7 @@ const BlogIndex = ({ data, location }) => {
                   }}
                 />
               </section>
+              </Link>
             </article>
           );
         })}
