@@ -1,22 +1,20 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
 
 const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  let header
+  const rootPath = `${__PATH_PREFIX__}/`;
+  let header;
 
   // if (location.pathname === rootPath) {
-  header = <div className="flex items-center">
-    <h1 className="text-2xl flex-1">
-      <Link to={`/`}>
-        {title}
-      </Link>
-    </h1>
+  header = (
+    <div className="flex items-center">
+      <h1 className="text-2xl flex-1">
+        <Link to={`/`}>{title}</Link>
+      </h1>
 
-    <Link to={`/blog`}>
-      Blog
-    </Link>
-  </div>
+      <Link to={`/blog`}>Blog</Link>
+    </div>
+  );
 
   return (
     <div className="max-w-4xl m-auto">
@@ -24,11 +22,10 @@ const Layout = ({ location, title, children }) => {
         <header>{header}</header>
         <hr className="mb-8" />
         <main>{children}</main>
-        <footer>
-        </footer>
+        <footer></footer>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

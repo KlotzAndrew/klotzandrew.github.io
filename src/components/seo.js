@@ -5,10 +5,10 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 
 const SEO = ({ description, lang, meta, title, image }) => {
   const { site } = useStaticQuery(
@@ -18,17 +18,18 @@ const SEO = ({ description, lang, meta, title, image }) => {
           siteMetadata {
             title
             description
-            social { twitter }
+            social {
+              twitter
+            }
             siteUrl
           }
         }
       }
     `
-  )
+  );
 
-  const metaDescription = description || site.siteMetadata.description
-  const ogImage = image && image.src ? `${site.siteMetadata.siteUrl}/${image.src}` : null // || defaultOpenGraphImage;
-
+  const metaDescription = description || site.siteMetadata.description;
+  const ogImage = image && image.src ? `${site.siteMetadata.siteUrl}/${image.src}` : null; // || defaultOpenGraphImage;
 
   return (
     <Helmet
@@ -66,50 +67,56 @@ const SEO = ({ description, lang, meta, title, image }) => {
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(
-        ogImage
-          ? [
-            {
-              property: "og:image",
-              content: ogImage,
-            },
-            {
-              property: "og:image:width",
-              content: `${image.width}`,
-            },
-            {
-              property: "og:image:height",
-              content: `${image.height}`,
-            },
-            {
-              name: "twitter:card",
-              content: "summary_large_image",
-            },
-          ]
-          : [
-            {
-              name: "twitter:card",
-              content: "summary",
-            },
-          ]
-      ).concat(meta)}
+      ]
+        .concat(
+          ogImage
+            ? [
+                {
+                  property: "og:image",
+                  content: ogImage,
+                },
+                {
+                  property: "og:image:width",
+                  content: `${ogImage.width}`,
+                },
+                {
+                  property: "og:image:height",
+                  content: `${ogImage.height}`,
+                },
+                {
+                  name: "twitter:card",
+                  content: "summary_large_image",
+                },
+              ]
+            : [
+                {
+                  name: "twitter:card",
+                  content: "summary",
+                },
+              ]
+        )
+        .concat(meta)}
     >
-      <script data-ad-client="ca-pub-2400576190409955" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script
+        data-ad-client="ca-pub-2400576190409955"
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      ></script>
     </Helmet>
-  )
-}
+  );
+};
 
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
-}
+};
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-}
+};
 
-export default SEO
+export default SEO;

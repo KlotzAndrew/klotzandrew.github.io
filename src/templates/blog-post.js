@@ -1,23 +1,23 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
+import React from "react";
+import { Link, graphql } from "gatsby";
+import { Disqus, CommentCount } from "gatsby-plugin-disqus";
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Bio from "../components/bio";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
-  const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata.title
-  const { previous, next } = pageContext
+  const post = data.markdownRemark;
+  const siteTitle = data.site.siteMetadata.title;
+  const { previous, next } = pageContext;
 
-  const image = post.frontmatter.image ? post.frontmatter.image.childImageSharp.resize : null
+  const image = post.frontmatter.image ? post.frontmatter.image.childImageSharp.resize : null;
 
   let disqusConfig = {
     url: location.href,
     identifier: post.id,
-    title: post.title
-  }
+    title: post.title,
+  };
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -31,9 +31,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <h1 className="text-3xl font-bold mb-2 leading-none tracking-tight">
             {post.frontmatter.title}
           </h1>
-          <p className="text-gray-600">
-            {post.frontmatter.date}
-          </p>
+          <p className="text-gray-600">{post.frontmatter.date}</p>
         </header>
         <section className="markdown" dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr className="my-12" />
@@ -64,10 +62,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       {/* <CommentCount config={disqusConfig} placeholder={'...'} /> */}
       <Disqus config={disqusConfig} />
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -96,4 +94,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

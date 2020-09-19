@@ -45,9 +45,9 @@ module.exports = {
           `gatsby-remark-prismjs`,
           // `gatsby-remark-copy-linked-files`,
           {
-            resolve: 'gatsby-remark-copy-linked-files',
+            resolve: "gatsby-remark-copy-linked-files",
             options: {
-              destinationDir: 'static',
+              destinationDir: "static",
             },
           },
           `gatsby-remark-smartypants`,
@@ -87,8 +87,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-disqus`,
       options: {
-        shortname: `klotzandrew`
-      }
+        shortname: `klotzandrew`,
+      },
     },
     {
       resolve: `gatsby-plugin-postcss`,
@@ -100,4 +100,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

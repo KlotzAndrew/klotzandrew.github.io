@@ -5,9 +5,9 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import Image from "gatsby-image";
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -31,9 +31,9 @@ const Bio = () => {
         }
       }
     }
-  `)
+  `);
 
-  const { author, social } = data.site.siteMetadata
+  const { author, social } = data.site.siteMetadata;
   return (
     <div className="flex items-center mt-6 mb-12">
       <Image
@@ -51,12 +51,15 @@ const Bio = () => {
       <p className="ml-3">
         Written by <strong>{author.name}</strong>. {author.summary}
         {` `}
-        <a className="text-blue-500 underline hover:no-underline" href={`https://twitter.com/${social.twitter}`}>
+        <a
+          className="text-blue-500 underline hover:no-underline"
+          href={`https://twitter.com/${social.twitter}`}
+        >
           You should follow him on Twitter
         </a>
       </p>
     </div>
-  )
-}
+  );
+};
 
-export default Bio
+export default Bio;
