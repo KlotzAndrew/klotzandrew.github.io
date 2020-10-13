@@ -4,7 +4,7 @@ title: "OKRs hierarchy: example for a MVP"
 date: 2020-10-12 17:00:00 -0500
 categories: management, okr
 featured: images/okr-tree-full.png
-description: ""
+description: "OKRs hierarchy: how do you set goals and keep alignment from company to department?"
 ---
 
 Let's start with some OKRs for this article
