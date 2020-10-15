@@ -20,7 +20,7 @@ const BlogIndex = ({ data, location }) => {
           if (!node.frontmatter.title) return <div key={node.fields.slug}></div>;
 
           return (
-            <article className="mx-2 mb-12 w-64" key={node.fields.slug}>
+            <article className="mx-2 mb-12 w-64 p-2" key={node.fields.slug}>
               <Link className="" to={node.fields.slug}>
                 <div>
                   <div className="h-48 mb-2">
