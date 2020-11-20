@@ -2,7 +2,7 @@
 layout: post
 title: "BPF intro: syscall counting"
 date: 2020-11-19 17:00:00 -0500
-categories: brotli, docker, golang, cgo
+categories: bpf, linux
 featured: images/bcc_tracing_tools_2019.png
 description: ""
 ---
