@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Engineering culture catchprases and quotes"
+title: "Engineering Culture: Catchphrases and Quotes"
 date: 2020-11-23 11:00:00 -0500
 categories: leadership
 featured: images/the-culture-code.jpg
