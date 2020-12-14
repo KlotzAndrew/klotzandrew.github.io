@@ -30,6 +30,7 @@ This is my current collection, you can probably tell where a lot of my focus liv
 1. Every system is perfectly designed to get the result that it does. - W. Edwards Deming
 
 #### Planning
+1. Plans are nothing, planning is everything - D. Eisenhower
 1. A goal without a plan is just a wish. - Larry Elder
 1. There is nothing so useless as doing efficiently that which should not be done at all. - Peter Drucker
 1. Until we can manage time, we can manage nothing else. - Peter Drucker
