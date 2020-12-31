@@ -4,7 +4,7 @@ title: "Farming for dissent"
 date: 2020-12-30 01:00:00 -0500
 categories: management
 featured: images/no-rules-rules.jpg
-description: "Farming for dissent"
+description: ""
 ---
 
 A good habit for the success of large projects is getting 'buy-in' or alignment from peers prior to starting. One of the challenges is that it can be hard to avoid a [groupthink][groupthink] trap and accidentally approach others who will agree with you. Another seeming innocuous challenge is just creating a low-barrier forum for others to bring concerns forward, especially when they are busy focusing on what is on their own plates.
