@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "API Health checks for graceful or cascading falure"
+title: "API Health checks for graceful or cascading failure"
 date: 2021-02-19 17:00:00 -0500
 categories: microservcies, SRE
 featured: images/cascading-failure.jpg
