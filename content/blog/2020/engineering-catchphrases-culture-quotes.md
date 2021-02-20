@@ -28,7 +28,7 @@ This is my current collection, you can probably tell where a lot of my focus liv
 1. What's measured improves - Peter Drucker
 1. Strategy is a commodity, execution is an art. - Peter Drucker
 1. Every system is perfectly designed to get the result that it does. - W. Edwards Deming
-1. Fall in love with the problem, not the solution
+1. Fall in love with the problem, not the solution. -
 
 #### Planning
 1. Plans are nothing, planning is everything - D. Eisenhower

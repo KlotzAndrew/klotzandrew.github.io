@@ -17,7 +17,7 @@ There are a few steps:
 1. Cron setup
 1. Deploy and run
 
-![:ambda xray](images/lambda_xray.png)
+![lambda xray](images/lambda_xray.png)
 
 ## Install
 
