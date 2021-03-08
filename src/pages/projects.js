@@ -12,10 +12,10 @@ const ProjectsIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="" />
 
-      <h1 className="text-xl">Projects</h1>
+      {/* <h1 className="text-xl">Projects</h1> */}
 
       {projects(data).map((project) => {
-        return <div className="flex mb-6">
+        return <div className="flex my-10">
           <div>
             <Image
               className="border"
@@ -34,7 +34,11 @@ const ProjectsIndex = ({ data, location }) => {
 
           <div className="flex flex-col ml-4">
             <div className="flex">
-              <div className="underline mb-2">{project.name}</div>
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline mb-2 text-blue-600 hover:text-blue-800 visited:text-purple-600">{project.name}</a>
 
               <div className="px-1">
                 {project.defunct && <div className="px-2 text-xs bg-red-500 rounded-full">defunct</div>}
@@ -60,14 +64,14 @@ let projects = (data) => [
   {
     name: "TestRecall",
     url: "https://testrecall.com",
-    desc: "Analytics for your tests",
+    desc: "Analytics for your tests.",
     imageSrc: data.projectTR.childImageSharp.fluid,
     defunct: false
   },
   {
     name: "StashTabViewer",
     url: "https://stashtabviewer.com",
-    desc: "Data ingestion and display",
+    desc: "Data ingestion and display.",
     imageSrc: data.projectSTV.childImageSharp.fluid,
     tech: ["go", "react", "terraform", "DigitalOcean", "badgerdb", "autohotkey"],
     defunct: false
@@ -75,7 +79,7 @@ let projects = (data) => [
   {
     name: "CloudLeaderBoard",
     url: "https://cloudleaderboard.com",
-    desc: "Sorted sets in the cloud",
+    desc: "Sorted sets in the cloud.",
     imageSrc: data.projectCLB.childImageSharp.fluid,
     tech: ["go", "react", "aws", "pulumi", "postgres", "redis"],
     defunct: true
@@ -91,7 +95,7 @@ let projects = (data) => [
   {
     name: "IllBePro",
     url: "http://illbepro.com",
-    desc: "HeroQueue is a registration portal for eSports tournaments designed for amateur or casual players.It drafts solo or duo players into balanced teams of 5 for even games.",
+    desc: "Play games. Win pizza.",
     imageSrc: data.projectIBP.childImageSharp.fluid,
     tech: ["rails", "heroku", "postgres"],
     defunct: true

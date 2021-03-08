@@ -31,7 +31,8 @@ const Layout = ({ location, title, children }) => {
         <Link to={`/`}>{title}</Link>
       </h1>
 
-      <Link to={`/blog`}>Blog</Link>
+      <Link className={"mx-2"} to={`/blog`}>Blog</Link>
+      <Link className={"mx-2"} to={`/projects`}>Projects</Link>
     </div>
   );
 
