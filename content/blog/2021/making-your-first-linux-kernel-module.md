@@ -2,7 +2,7 @@
 layout: post
 title: "Making your first kernel module"
 date: 2021-03-20 11:00:00 -0500
-categories: keyboards
+categories: linux, c
 featured: images/linux.png
 description: ""
 ---
