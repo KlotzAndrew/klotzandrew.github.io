@@ -7,7 +7,7 @@ featured: images/bcc_tracing_tools_2019.png
 description: ""
 ---
 
-After watching a talk on [eBPF Superpowers][1], I wanted to give writing a program myself a try. Thanks to [BCC][2] BPF is pretty easy to get started using mostly python and a sprinkle of C.
+After watching a talk on [eBPF Superpowers][bpf_superpowers], I wanted to give writing a program myself a try. Thanks to [BCC][bcc] BPF is pretty easy to get started using mostly python and a sprinkle of C.
 
 We are going to start by writing a program that counts the number of times the kernel function `sys_clone` gets called, which is when a new process is created.
 
