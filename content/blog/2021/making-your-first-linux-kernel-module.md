@@ -48,7 +48,7 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-We should be able to run `vagrant up && vagrant ssh`, then `cd src` to drop us into a safe shell with our working directory to run kernel modules in. Before we get started you will need to install the kernel headers for your kernel version, using `apt-get install build-essential linux-headers-`uname -r``
+We should be able to run `vagrant up && vagrant ssh`, then `cd src` to drop us into a safe shell with our working directory to run kernel modules in. Before we get started you will need to install the kernel headers for your kernel version, using `` apt-get install build-essential linux-headers-`uname -r` ``
 
 ## The module
 
