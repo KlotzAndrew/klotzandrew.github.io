@@ -163,7 +163,7 @@ curl http://guest:@0.0.0.0:3000/foo
 curl http://guest:@0.0.0.0:3000/bar
 
 # allow
-curl http://admin:@0.0.0.0:3000/bar
+curl -X POST http://admin:@0.0.0.0:3000/bar
 ```
 
 What we have achieved with this is an extremely performant
