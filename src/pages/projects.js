@@ -64,14 +64,14 @@ let projects = (data) => [
   {
     name: "TestRecall",
     url: "https://testrecall.com",
-    desc: "Analytics for your tests.",
+    desc: "Increasing test reliability can be hard. TestRecall provides analytics for your tests.",
     imageSrc: data.projectTR.childImageSharp.fluid,
     defunct: false
   },
   {
     name: "StashTabViewer",
     url: "https://stashtabviewer.com",
-    desc: "Data ingestion and display.",
+    desc: "Path of Exile provides no way to view character items outside the game. StashTabViewer ingests ~1 TB of events per month from Path of Exile, displaying the information online.",
     imageSrc: data.projectSTV.childImageSharp.fluid,
     tech: ["go", "react", "terraform", "DigitalOcean", "badgerdb", "autohotkey"],
     defunct: false
@@ -79,7 +79,7 @@ let projects = (data) => [
   {
     name: "CloudLeaderBoard",
     url: "https://cloudleaderboard.com",
-    desc: "Sorted sets in the cloud.",
+    desc: "Build real time leaderboards in the cloud, with a an easy to use API.",
     imageSrc: data.projectCLB.childImageSharp.fluid,
     tech: ["go", "react", "aws", "pulumi", "postgres", "redis"],
     defunct: true
@@ -87,7 +87,7 @@ let projects = (data) => [
   {
     name: "HeroQueue",
     url: "http://heroqueue.com",
-    desc: "HeroQueue is a registration portal for eSports tournaments designed for amateur or casual players.It drafts solo or duo players into balanced teams of 5 for even games.",
+    desc: "HeroQueue is a registration portal for eSports tournaments, including ELO-based match balancing.",
     imageSrc: data.projectHQ.childImageSharp.fluid,
     tech: ["rails", "heroku", "postgres"],
     defunct: true
@@ -95,7 +95,7 @@ let projects = (data) => [
   {
     name: "IllBePro",
     url: "http://illbepro.com",
-    desc: "Play games. Win pizza.",
+    desc: "What if you could win pizza for playing video games? IllBePro connects in-game achievements to physical rewards, letting you win pizza for winning games.",
     imageSrc: data.projectIBP.childImageSharp.fluid,
     tech: ["rails", "heroku", "postgres"],
     defunct: true
