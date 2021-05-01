@@ -55,9 +55,9 @@ const BlogIndex = ({ data, location }) => {
           if (!node.frontmatter.title) return; // <div key={node.fields.slug}></div>;
 
           return (
-            <article className="mx-2 mb-12 w-full" key={node.fields.slug}>
+            <article className="mx-2 w-full" key={node.fields.slug}>
               <Link className="" to={node.fields.slug}>
-                <div className="hover:bg-gray-200 p-2">
+                <div className="hover:bg-gray-200">
                   {/* <div className="h-48 mb-2">
                     {img && (
                       <Image
@@ -69,19 +69,18 @@ const BlogIndex = ({ data, location }) => {
                   </div> */}
 
                   <div>
-                    <h3>
-                      <div className="text-xl font-bold text-blue-500">{title}</div>
+                    <h3 className="flex justify-between">
+                      <div className="text-xl text-blue-500">{title}</div>
+                      <div>{node.frontmatter.date}</div>
                     </h3>
-                    <small>{node.frontmatter.date}</small>
-
-                    <section>
+                    {/* <section>
                       <p
                         className=""
                         dangerouslySetInnerHTML={{
                           __html: node.frontmatter.description || node.excerpt,
                         }}
                       />
-                    </section>
+                    </section> */}
                   </div>
                 </div>
               </Link>
@@ -125,7 +124,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "MMM DD, YYYY")
             title
             description
 
