@@ -2,7 +2,7 @@
 layout: post
 title: "Leverage points and feedback loops: doing more with less"
 date: 2021-05-01 11:00:00 -0500
-categories: architecture, microservices
+categories: architecture
 featured: images/leverage-75.png
 description: ""
 ---
