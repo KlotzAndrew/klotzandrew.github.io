@@ -9,7 +9,9 @@ description: ""
 
 If you are doing bulk inserts into Postgres you may have hit a message like this `extended protocol limited to 65535 parameters`, You may be tempted to rewrite your query into chunks and loop over those chunks, but there is a better way! We will use a Golang example that passes the 65535 constraints and reduces the time to insert 25k records from 2.9s to 24ms.
 
-The 65535 error refers to the fact that Postgres uses a 32-bit int for binding input parameters and is not able to track anything larger. There is a trick I learned from [@HarlemCavalier][HarlemCavalier] in [promscale][promscale] using the `unnest` function to pass an array containing many values, with the array counting as a single parameter. The effective change in SQL looks like this:
+*A caveat on speed claims, I only tested this with the [Go pgx library][pgx] - so mileage may vary*
+
+The 65535 error refers to the fact that [Postgres wire protocol uses an Int16 for binding input parameters][bind_limit], which is also a [limit on the backend][param_limit]. There is a trick I learned from [@HarlemCavalier][HarlemCavalier] in [promscale][promscale] using the `unnest` function to pass an array containing many values, with the array counting as a single parameter. The effective change in SQL looks like this:
 
 ```sql
 -- before
@@ -283,3 +285,6 @@ func valuesToRows(values [][]int) (string, []interface{}) {
 
 [HarlemCavalier]: https://twitter.com/HarlemCavalier/status/1328090245657751553
 [promscale]: https://github.com/timescale/promscale/blob/29f4691e22e4525206a9a5df1608ec9d81747659/pkg/pgmodel/sql_ingest.go#L633
+[param_limit]: https://github.com/postgres/postgres/blob/master/src/interfaces/libpq/fe-exec.c#L1406-L1411
+[bind_limit]: https://www.postgresql.org/docs/13/protocol-message-formats.html
+[pgx]: https://github.com/jackc/pgx
