@@ -17,10 +17,10 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="" />
 
-      <div className="mt-20 flex">
-        <div className="">
+      <div className="mt-20 lg:flex">
+        <div className="mb-4">
           <Image
-            className=""
+            className="m-auto"
             fluid={data.avatar.childImageSharp.fluid}
             alt={author.name}
             style={{
@@ -34,13 +34,11 @@ const BlogIndex = ({ data, location }) => {
           />
         </div>
 
-        <div className="mx-4 flex flex-col justify-between">
+        <div className="mb-4 mx-4 flex flex-col justify-between">
           <p className="italic bold text-xl mb-4">Ensure people have the tools to be their best</p>
 
-          <p style={{ textIndent: "3em" }}>
-            Andrew Klotz is a an Entrepreneur and Software Engineer with a Masters Degree in
-            business. He brings his technical and business experience to deliver high-impact
-            projects.
+          <p className="mb-4" style={{ textIndent: "3em" }}>
+            Andrew Klotz has been a software engineering leader in multiple industries, including Finance, Healthcare, Marketing, and Video Games. He earned a Master's Degree in International Business while studying in Shanghai, China, and uses his business and technical background to deliver high-impact projects for organizations.
           </p>
           <Social />
         </div>
@@ -48,7 +46,7 @@ const BlogIndex = ({ data, location }) => {
 
       <div className="my-20"></div>
 
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-wrap">
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug;
           const img = node.frontmatter.featured && node.frontmatter.featured.childImageSharp.fluid;
@@ -68,12 +66,11 @@ const BlogIndex = ({ data, location }) => {
                     )}
                   </div> */}
 
-                  <div>
-                    <h3 className="flex justify-between">
-                      <div className="text-xl text-blue-500">{title}</div>
-                      <div>{node.frontmatter.date}</div>
-                    </h3>
-                    {/* <section>
+                  <h3 className="block md:flex justify-between">
+                    <div className="text-xl text-blue-500 truncate">{title}</div>
+                    <div className="">{node.frontmatter.date}</div>
+                  </h3>
+                  {/* <section>
                       <p
                         className=""
                         dangerouslySetInnerHTML={{
@@ -81,7 +78,6 @@ const BlogIndex = ({ data, location }) => {
                         }}
                       />
                     </section> */}
-                  </div>
                 </div>
               </Link>
             </article>
