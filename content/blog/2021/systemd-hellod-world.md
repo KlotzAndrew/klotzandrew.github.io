@@ -42,12 +42,12 @@ func main() {
 }
 ```
 
-The systemd docs have an example service file we can mostly fill out:
-Description - to tell us what this is
-ExecStart - the command we will be starting, our go `hellod` binary
-WantedBy - the target machine state for enabling start on boot, `multi-user.target` is when everything before the GUI has been started
-Restart - restarts our binary when it stops
-RestartSec - time interval between restarts
+The [systemd docs][systemd_docs] have an example service file we can mostly fill out:
+* **Description** - to tell us what this is
+* **ExecStart** - the command we will be starting, our go `hellod` binary
+* **WantedBy** - the target machine state for enabling start on boot, `multi-user.target` is when everything before the * GUI has been started
+* **Restart** - restarts our binary when it stops
+* **RestartSec** - time interval between restarts
 
 ```ini
 # hellod.service
@@ -158,3 +158,5 @@ curl 0.0.0.0:8080
 ```
 
 The last piece of the puzzle is to enable this to start when the machine starts, or restarts. With `sudo systemctl start hellod.service` we now have a fully running systemd service, hellod!
+
+[systemd_docs]: https://www.freedesktop.org/software/systemd/man/systemd.unit.html#
