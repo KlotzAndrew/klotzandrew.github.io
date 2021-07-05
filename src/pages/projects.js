@@ -62,6 +62,13 @@ const ProjectsIndex = ({ data, location }) => {
 
 let projects = (data) => [
   {
+    name: "GitGlow",
+    url: "https://gitglow.com",
+    desc: "Get alerted immediately when one of your GitHub organization repositories becomes public.",
+    imageSrc: data.projectGG.childImageSharp.fluid,
+    defunct: false
+  },
+  {
     name: "TestRecall",
     url: "https://testrecall.com",
     desc: "Increasing test reliability can be hard. TestRecall provides analytics for your tests.",
@@ -74,7 +81,7 @@ let projects = (data) => [
     desc: "Path of Exile provides no way to view character items outside the game. StashTabViewer ingests ~1 TB of events per month from Path of Exile, displaying the information online.",
     imageSrc: data.projectSTV.childImageSharp.fluid,
     tech: ["go", "react", "terraform", "DigitalOcean", "badgerdb", "autohotkey"],
-    defunct: false
+    defunct: true
   },
   {
     name: "CloudLeaderBoard",
@@ -120,6 +127,13 @@ export const pageQuery = graphql`
       }
     }
 
+    projectGG: file(absolutePath: { regex: "/gg-main.png/" }) {
+      childImageSharp {
+        fluid(quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     projectTR: file(absolutePath: { regex: "/tr-main.png/" }) {
       childImageSharp {
         fluid(quality: 100) {
