@@ -2,7 +2,7 @@
 layout: post
 title: "Five levels of ownership"
 date: 2021-08-21 13:00:00 -0500
-categories: golang
+categories: leadership
 featured: images/maslows.png
 description: ""
 ---
