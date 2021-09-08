@@ -54,7 +54,7 @@ const groupedByYear = (books) => {
 let books = [
   {
     author: "Laszlo Bock",
-    date_finished: "",
+    date_finished: "2021/06/01",
     title: "Work Rules!: Insights from Inside Google That Will Transform How You Live and Lead"
   },
   {
