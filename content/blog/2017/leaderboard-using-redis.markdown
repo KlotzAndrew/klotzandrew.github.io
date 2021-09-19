@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Building a leaderboard with redis"
+title:  "Building a Leaderboard with Redis"
 date:   2017-12-24 17:20:00 -0500
 categories: redis, go
 featured: images/redis-logo.png

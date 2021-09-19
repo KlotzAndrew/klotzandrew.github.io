@@ -2,7 +2,7 @@
 layout: post
 title: "Building CloudLeaderboard"
 date: 2021-09-19 11:00:00 -0500
-categories: leadership
+categories: golang, aws
 featured: images/clb-main.png
 description: ""
 ---
