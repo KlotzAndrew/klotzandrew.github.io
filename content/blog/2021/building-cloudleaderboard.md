@@ -77,7 +77,7 @@ I picked a set of tools I happened to be using at the time. ECS would have been 
 - CloudFront
 - S3
 
-!["cloudleaderboard architecture](./images/clb-arch.png)
+!["cloudleaderboard architecture"](./images/clb-arch.png)
 
 ## Fun components
 
