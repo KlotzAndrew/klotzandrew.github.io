@@ -53,6 +53,11 @@ const groupedByYear = (books) => {
 
 let books = [
   {
+    author: "Sidney Dekker",
+    date_finished: "2021/09/25",
+    title: "Drift into Failure"
+  },
+  {
     author: "Laszlo Bock",
     date_finished: "2021/06/01",
     title: "Work Rules!: Insights from Inside Google That Will Transform How You Live and Lead"
