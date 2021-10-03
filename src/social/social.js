@@ -25,8 +25,12 @@ const Social = () => {
   return (
     <div className="flex justify-center">
       <div className="flex justify-center items-center">
-        <a className="px-1 underline fill-current hover:text-blue-500 hover:blue-500" target="_blank" href="https://github.com/klotzandrew.keys">SSH key</a>
-        <a className="px-1 underline fill-current hover:text-blue-500 hover:blue-500" target="_blank" href="https://github.com/klotzandrew.gpg">GPG key</a>
+        <a className="px-1 underline fill-current hover:text-blue-500 hover:blue-500"
+          target="_blank" rel="noopener noreferrer"
+          href="https://github.com/klotzandrew.keys">SSH key</a>
+        <a className="px-1 underline fill-current hover:text-blue-500 hover:blue-500"
+          target="_blank" rel="noopener noreferrer"
+          href="https://github.com/klotzandrew.gpg">GPG key</a>
 
         <SocialIcon
           title="GitHub icon"
@@ -57,6 +61,7 @@ const SocialIcon = ({ title, href, path }) => {
   return <a
     className="px-1 hover:underline fill-current hover:text-blue-500 hover:blue-500 "
     target="_blank"
+    rel="noopener noreferrer"
     href={href}
   >
     <svg className="h-5 w-5" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>{title}</title>
