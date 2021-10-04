@@ -53,6 +53,11 @@ const groupedByYear = (books) => {
 
 let books = [
   {
+    author: "David Marquet ",
+    date_finished: "2021/10/04",
+    title: "Turn the Ship Around!: A True Story of Turning Followers into Leaders"
+  },
+  {
     author: "Sidney Dekker",
     date_finished: "2021/09/25",
     title: "Drift into Failure"
@@ -61,11 +66,6 @@ let books = [
     author: "Laszlo Bock",
     date_finished: "2021/06/01",
     title: "Work Rules!: Insights from Inside Google That Will Transform How You Live and Lead"
-  },
-  {
-    author: "David Marquet ",
-    date_finished: "",
-    title: "Turn the Ship Around!: A True Story of Turning Followers into Leaders"
   },
   {
     author: "",

@@ -41,7 +41,7 @@ const ProjectsIndex = ({ data, location }) => {
                 className="underline mb-2 text-blue-600 hover:text-blue-800 visited:text-purple-600">{project.name}</a>
 
               <div className="px-1">
-                {project.defunct && <div className="px-2 text-xs bg-red-500 rounded-full">defunct</div>}
+                {project.defunct && <div className="px-2 text-xs bg-red-500 rounded-full">shutdown</div>}
               </div>
             </div>
 
