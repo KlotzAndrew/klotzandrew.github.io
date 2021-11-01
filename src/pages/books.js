@@ -33,7 +33,7 @@ const BooksPage = ({ data, location }) => {
 
 const BookItem = ({ book }) => {
   return <li className="ml-8">
-    <div>{book.title}</div>
+    {book.title}
   </li>
 }
 
@@ -53,7 +53,27 @@ const groupedByYear = (books) => {
 
 let books = [
   {
-    author: "David Marquet ",
+    author: "J.R. Storment, Mike Fuller",
+    date_finished: "",
+    title: "Cloud FinOps"
+  },
+  {
+    author: "David N. Blank-Edelman",
+    date_finished: "",
+    title: "Seeking SRE"
+  },
+  {
+    author: "David Marquet",
+    date_finished: "",
+    title: "Leadership is Language"
+  },
+  {
+    author: "Marc Levinson",
+    date_finished: "2021/10/31",
+    title: "The Box: How the Shipping Container Made the World Smaller and the World Economy Bigger"
+  },
+  {
+    author: "David Marquet",
     date_finished: "2021/10/04",
     title: "Turn the Ship Around!: A True Story of Turning Followers into Leaders"
   },
@@ -68,27 +88,27 @@ let books = [
     title: "Work Rules!: Insights from Inside Google That Will Transform How You Live and Lead"
   },
   {
-    author: "",
+    author: "Will Larson",
     date_finished: "2021/06/01",
     title: "Staff Engineer: Leadership beyond the management track"
   },
   {
-    author: "",
+    author: "Atul Gawande",
     date_finished: "2021/06/01",
     title: "The Checklist Manifesto: How to Get Things Right"
   },
   {
-    author: "",
+    author: "Richard P. Rumelt",
     date_finished: "2021/06/01",
     title: "Good Strategy Bad Strategy: The Difference and Why It Matters"
   },
   {
-    author: "",
+    author: "Donella H. Meadows, Diana Wright",
     date_finished: "2021/06/01",
     title: "Thinking in Systems: A Primer"
   },
   {
-    author: "",
+    author: "Reed Hastings, Erin Meyer",
     date_finished: "2021/06/01",
     title: "No Rules Rules: Netflix and the Culture of Reinvention"
   },
@@ -98,7 +118,7 @@ let books = [
     title: "Radical Focus: Achieving Your Most Important Goals with Objectives and Key Results"
   },
   {
-    author: "Christina Wodtke",
+    author: "Eric Schmidt, Jonathan Rosenberg, Alan Eagle",
     date_finished: "2021/06/01",
     title: "Trillion Dollar Coach: The Leadership Playbook of Silicon Valley's Bill Campbell"
   },
@@ -116,27 +136,27 @@ let books = [
   // 2020
   //
   {
-    author: "",
+    author: "Betsy Beyer, Chris Jones, Jennifer Petoff, Niall Richard Murphy",
     date_finished: "2020/06/01",
     title: "Site Reliability Engineering: How Google Runs Production Systems"
   },
   {
-    author: "",
+    author: "Patty McCord",
     date_finished: "2020/06/01",
     title: "Powerful: Building a Culture of Freedom and Responsibility"
   },
   {
-    author: "",
+    author: "Daniel Coyle",
     date_finished: "2020/06/01",
     title: "The Culture Code: The Secrets of Highly Successful Groups"
   },
   {
-    author: "",
+    author: "Gene Kim",
     date_finished: "2020/06/01",
     title: "The Unicorn Project"
   },
   {
-    author: "",
+    author: "Matthew Skelton, Manuel Pais",
     date_finished: "2020/06/01",
     title: "Team Topologies: Organizing Business and Technology Teams for Fast Flow"
   },
