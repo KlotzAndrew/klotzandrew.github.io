@@ -13,13 +13,15 @@ This is part 1 of a 3 about creating an Actions Per Minute (APM) tracker for pla
 - [Part 2, UI][part_2]
 - [Part 3, Data structure][part_3]
 
-A few games I had in mind to track my APM with are League of Legends, Dota 2, and Age of Empires. The idea is to have a binary that does one thing: display a small box with our current APM number in the corner of the screen. For this we need 3 components:
+The idea is to have a program that displays a small box with our current APM number in the corner of the screen.
+
+!["apm counter example"](images/apm_counter_example.png)
+
+A few games I had in mind to track my APM with are League of Legends, Dota 2, and Age of Empires. I don’t play competitively, but I thought it would be cool to build a little widget that shows me my APM. For this we need 3 components:
 
 1. Count actions (keystrokes or mouse clicks)
 2. Calculate a per minute average
 3. Display the number on the screen
-
-!["apm counter example"](images/apm_counter_example.png)
 
 The first part we will start with is registering keyboard and mouse actions, which will be the input to our APM counter.  There are two architectural styles I looked at for counting keystrokes. Both styles use the Win32 API.
 
