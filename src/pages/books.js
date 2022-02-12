@@ -63,8 +63,13 @@ let books = [
     title: "Seeking SRE"
   },
   {
+    author: "Casey Rosenthal & Nora Jones",
+    date_finished: "2022/2/09",
+    title: "Chaos Engineering"
+  },
+  {
     author: "David Marquet",
-    date_finished: "",
+    date_finished: "2022/1/06",
     title: "Leadership is Language"
   },
   {
