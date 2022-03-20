@@ -2,7 +2,7 @@
 layout: post
 title: "Smallest Golang Docker Image"
 date: 2022-03-20 13:00:00 -0500
-categories: cpp, windows
+categories: docker, golang
 featured: images/tiny_container_ship.jpg
 description: ""
 ---
