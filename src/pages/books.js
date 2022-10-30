@@ -63,6 +63,29 @@ let books = [
     title: "Seeking SRE"
   },
   {
+    author: "",
+    date_finished: "2022/2/09",
+    title: "On Writing Well"
+  },
+  {
+    author: "",
+    date_finished: "2022/2/09",
+    title: "Crafting Interpreters"
+  },
+  //
+  // 2022
+  //
+  {
+    author: "",
+    date_finished: "2022/2/09",
+    title: "Maus I"
+  },
+  {
+    author: "",
+    date_finished: "2022/2/09",
+    title: "Maus II"
+  },
+  {
     author: "Casey Rosenthal & Nora Jones",
     date_finished: "2022/2/09",
     title: "Chaos Engineering"
@@ -72,6 +95,9 @@ let books = [
     date_finished: "2022/1/06",
     title: "Leadership is Language"
   },
+  //
+  // 2021
+  //
   {
     author: "Marc Levinson",
     date_finished: "2021/10/31",
