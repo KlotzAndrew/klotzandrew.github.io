@@ -76,14 +76,24 @@ let books = [
   // 2022
   //
   {
-    author: "",
-    date_finished: "2022/2/09",
-    title: "Maus I"
+    author: "Blake Crouch",
+    date_finished: "2022/11/14",
+    title: "Recursion"
   },
   {
-    author: "",
-    date_finished: "2022/2/09",
+    author: "Philip K. Dick",
+    date_finished: "2022/11/01",
+    title: "Do Androids Dream of Electric Sheep?"
+  },
+  {
+    author: "Art Spiegelman",
+    date_finished: "2022/7/09",
     title: "Maus II"
+  },
+  {
+    author: "Art Spiegelman",
+    date_finished: "2022/2/09",
+    title: "Maus I"
   },
   {
     author: "Casey Rosenthal & Nora Jones",
