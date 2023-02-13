@@ -3,7 +3,7 @@ layout: post
 title: "Instrumenting bash scripts"
 date: 2023-02-06 13:00:00 -0500
 categories: bash, monitoring
-featured: images/apm_counter_example.png
+featured: images/bash_logo.png
 description: ""
 ---
 
