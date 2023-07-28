@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Set up go with Bazel"
+title: "Setting up go with Bazel"
 date: 2023-06-11 13:00:00 -0500
 categories: architecture
 featured: images/container_towers.png
