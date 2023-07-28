@@ -1,0 +1,24 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library", "go_test")
+load("@bazel_gazelle//:def.bzl", "gazelle")
+
+# gazelle:prefix hello-world-bazel-go
+gazelle(name = "gazelle")
+
+go_library(
+    name = "hello-world-bazel-go_lib",
+    srcs = ["main.go"],
+    importpath = "hello-world-bazel-go",
+    visibility = ["//visibility:private"],
+    deps = ["@com_github_davecgh_go_spew//spew"],
+)
+
+go_binary(
+    name = "hello-world-bazel-go",
+    embed = [":hello-world-bazel-go_lib"],
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "hello-world-bazel-go_test",
+    srcs = ["main_test.go"],
+)
