@@ -27,7 +27,7 @@
     "gatsby-remark-responsive-iframe": "^5.7.0",
     "gatsby-remark-smartypants": "^5.21.0",
     "gatsby-source-filesystem": "^4.7.0",
-    "gatsby-transformer-remark": "^5.25.1",
+    "gatsby-transformer-remark": "^6.12.0",
     "gatsby-transformer-sharp": "^4.20.0",
     "prismjs": "^1.27.0",
     "react": "^17.0.2",
@@ -37,7 +37,7 @@
   "devDependencies": {
     "gh-pages": "^5.0.0",
     "prettier": "2.5.1",
-    "tailwindcss": "^1.1.3"
+    "tailwindcss": "^3.3.3"
   },
   "homepage": "https://klotzandrew.com",
   "keywords": [
