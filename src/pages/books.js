@@ -62,11 +62,6 @@ let books = [
     date_finished: "",
     title: "Seeking SRE"
   },
-  {
-    author: "",
-    date_finished: "2022/2/09",
-    title: "Crafting Interpreters"
-  },
   //
   // 2023
   //
@@ -96,6 +91,11 @@ let books = [
     title: "Redshirts"
   },
   {
+    author: "Ken Forkish",
+    date_finished: "2023/04/20",
+    title: "Flour Water Salt Yeast: The Fundamentals of Artisan Bread and Pizza"
+  },
+  {
     author: "William Zinsser",
     date_finished: "2023/3/24",
     title: "On Writing Well"
@@ -118,6 +118,11 @@ let books = [
   //
   // 2022
   //
+  {
+    author: "Robert Nystrom",
+    date_finished: "2022/12/09",
+    title: "Crafting Interpreters"
+  },
   {
     author: "Blake Crouch",
     date_finished: "2022/11/14",
