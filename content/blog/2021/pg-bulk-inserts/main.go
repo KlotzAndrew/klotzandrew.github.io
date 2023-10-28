@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"strconv"
-	"time"
+	"strings"
 
 	"github.com/jackc/pgx/v4"
 )
@@ -52,9 +52,6 @@ func makeTestUsers(max int) [][]int {
 }
 
 func UnnestInsert(conn *pgx.Conn, values [][]int) {
-	start := time.Now()
-	defer func() { fmt.Println("unnestInsert", time.Since(start)) }()
-
 	ids, names := []int{}, []int{}
 	for _, v := range values {
 		ids = append(ids, v[0])
@@ -69,14 +66,11 @@ func UnnestInsert(conn *pgx.Conn, values [][]int) {
 		)`
 
 	if _, err := conn.Exec(context.Background(), query, ids, names); err != nil {
-		fmt.Println(err)
+		panic(err)
 	}
 }
 
 func RegularInsert(conn *pgx.Conn, values [][]int) {
-	start := time.Now()
-	defer func() { fmt.Println("regularInsert", time.Since(start)) }()
-
 	query := `
 	INSERT INTO users
 		(id, name)
@@ -86,7 +80,7 @@ func RegularInsert(conn *pgx.Conn, values [][]int) {
 	query = fmt.Sprintf(query, queryParams)
 
 	if _, err := conn.Exec(context.Background(), query, params...); err != nil {
-		fmt.Println(err)
+		panic(err)
 	}
 }
 
@@ -94,6 +88,34 @@ func RegularInsert(conn *pgx.Conn, values [][]int) {
 // input: [[1,2],[3,4]]
 // output: ($1,$2),($3,$4) and [1,2,3,4]
 func valuesToRows(values [][]int) (string, []interface{}) {
+	rows := []interface{}{}
+	var query strings.Builder
+	for i, s := range values {
+		rows = append(rows, s[0], s[1])
+
+		numFields := len(s)
+		n := i * numFields
+
+		query.WriteString(`(`)
+		for j := 0; j < numFields; j++ {
+			query.WriteString(`$`)
+			query.WriteString(strconv.Itoa(n + j + 1))
+
+			if j < numFields-1 {
+				query.WriteString(`,`)
+			}
+		}
+
+		query.WriteString(`)`)
+		if i < len(values)-1 {
+			query.WriteString(`,`)
+		}
+	}
+
+	return query.String(), rows
+}
+
+func valuesToRowsConcatenation(values [][]int) (string, []interface{}) {
 	rows := []interface{}{}
 	query := ""
 	for i, s := range values {
