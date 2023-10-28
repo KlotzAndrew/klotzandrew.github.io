@@ -65,12 +65,55 @@ let books = [
   {
     author: "",
     date_finished: "2022/2/09",
+    title: "Crafting Interpreters"
+  },
+  //
+  // 2023
+  //
+  {
+    author: "Mary Robinette Kowal",
+    date_finished: "2023/10/20",
+    title: "The Calculating Stars"
+  },
+  {
+    author: "Neal Ford, Rebecca Parsons, Patrick Kua",
+    date_finished: "2023/7/15",
+    title: "Building Evolutionary Architectures"
+  },
+  {
+    author: "Ann Leckie",
+    date_finished: "2023/6/27",
+    title: "Ancillary Justice"
+  },
+  {
+    author: "Neal Ford, Mark Richards, Pramod Sadalage, Zhamak Dehghani",
+    date_finished: "2023/6/10",
+    title: "Software Architecture: The Hard Parts"
+  },
+  {
+    author: "John Scalzi",
+    date_finished: "2023/5/04",
+    title: "Redshirts"
+  },
+  {
+    author: "William Zinsser",
+    date_finished: "2023/3/24",
     title: "On Writing Well"
   },
   {
-    author: "",
-    date_finished: "2022/2/09",
-    title: "Crafting Interpreters"
+    author: "Danny Meyer",
+    date_finished: "2023/2/03",
+    title: "Setting the Table"
+  },
+  {
+    author: "James S.A. Corey",
+    date_finished: "2023/1/19",
+    title: "Leviathan Wakes"
+  },
+  {
+    author: "Andy Weir",
+    date_finished: "2023/1/06",
+    title: "Project Hail Mary"
   },
   //
   // 2022
