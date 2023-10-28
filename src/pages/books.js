@@ -53,6 +53,11 @@ const groupedByYear = (books) => {
 
 let books = [
   {
+    author: "Travis Baldree",
+    date_finished: "",
+    title: "Legends and Lattes"
+  },
+  {
     author: "J.R. Storment, Mike Fuller",
     date_finished: "",
     title: "Cloud FinOps"
@@ -61,6 +66,11 @@ let books = [
     author: "David N. Blank-Edelman",
     date_finished: "",
     title: "Seeking SRE"
+  },
+  {
+    author: "Arkady Martine",
+    date_finished: "",
+    title: "A Memory Called Empire"
   },
   //
   // 2023
