@@ -53,9 +53,9 @@ const groupedByYear = (books) => {
 
 let books = [
   {
-    author: "Skunk Works: A Personal Memoir of My Years of Lockheed",
+    author: "Ben R. Rich and Leo Janos",
     date_finished: "",
-    title: "Ben R. Rich and Leo Janos"
+    title: "Skunk Works: A Personal Memoir of My Years of Lockheed"
   },
   {
     author: "System Design Interview – An Insider's Guide: Volume 2",
@@ -78,7 +78,7 @@ let books = [
   // 2024
   //
   {
-    author: "Janette Sadik-Khan",
+    author: "Rob Fitzpatrick",
     date_finished: "2024/04/18",
     title: "The Mom Test"
   },
