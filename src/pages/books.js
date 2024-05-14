@@ -53,9 +53,14 @@ const groupedByYear = (books) => {
 
 let books = [
   {
-    author: "Travis Baldree",
+    author: "Skunk Works: A Personal Memoir of My Years of Lockheed",
     date_finished: "",
-    title: "Legends and Lattes"
+    title: "Ben R. Rich and Leo Janos"
+  },
+  {
+    author: "System Design Interview – An Insider's Guide: Volume 2",
+    date_finished: "",
+    title: "Alex Xu"
   },
   {
     author: "J.R. Storment, Mike Fuller",
@@ -67,14 +72,49 @@ let books = [
     date_finished: "",
     title: "Seeking SRE"
   },
+
+
+  //
+  // 2024
+  //
+  {
+    author: "Janette Sadik-Khan",
+    date_finished: "2024/04/18",
+    title: "The Mom Test"
+  },
+  {
+    author: "Janette Sadik-Khan",
+    date_finished: "2024/03/27",
+    title: "Street Fight"
+  },
+  {
+    author: "William Gibson",
+    date_finished: "2024/02/20",
+    title: "Neuromancer"
+  },
+  {
+    author: "Travis Baldree",
+    date_finished: "2024/02/07",
+    title: "Bookshops & Bonedust"
+  },
   {
     author: "Arkady Martine",
-    date_finished: "",
+    date_finished: "2024/01/15",
     title: "A Memory Called Empire"
   },
   //
   // 2023
   //
+  {
+    author: "Cixin Liu",
+    date_finished: "2023/12/15",
+    title: "Three Body Problem"
+  },
+  {
+    author: "Travis Baldree",
+    date_finished: "2023/11/26",
+    title: "Legends and Lattes"
+  },
   {
     author: "Mary Robinette Kowal",
     date_finished: "2023/10/20",
