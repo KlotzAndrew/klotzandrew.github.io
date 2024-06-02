@@ -1,15 +1,15 @@
 ---
 layout: post
-title: "Passing the Postgres 65535 parameter limit at 120x speed"
+title: "Passing the Postgres 65535 parameter limit"
 date: 2021-05-15 08:00:00 -0500
 categories: postgres
 featured: images/regular-vs-unnest.png
 description: ""
 ---
 
-If you are doing bulk inserts into Postgres you may have hit a message like this `extended protocol limited to 65535 parameters`, You may be tempted to rewrite your query into chunks and loop over those chunks, but there is a better way! We will use a Golang example that passes the 65535 constraints and reduces the time to insert 25k records from 2.9s to 24ms.
+If you are doing bulk inserts into Postgres you may have hit a message like this `extended protocol limited to 65535 parameters`, You may be tempted to rewrite your query into chunks and loop over those chunks, but there is a better way! We will use a Golang example that passes the 65535 constraints.
 
-*A caveat on speed claims, I only tested this with the [Go pgx library][pgx] - so mileage may vary*
+*A note, this article previously had an incorrect claim about speed improvements - which were due to one implementation using string concatenation (slow) and another method not doing that*
 
 The 65535 error refers to the fact that [Postgres wire protocol uses an Int16 for binding input parameters][bind_limit], which is also a [limit on the backend][param_limit]. There is a trick I learned from [@HarlemCavalier][HarlemCavalier] in [promscale][promscale] using the `unnest` function to pass an array containing many values, with the array counting as a single parameter. The effective change in SQL looks like this:
 
@@ -26,8 +26,6 @@ INSERT INTO users
 ```
 
 ## Example in golang
-
-We are going to write up an example that first shows a 100x speed improvement, and second shows our unnest function exceeding our parameter limit.
 
 For starters we need a running Postgres container to work with, in a new terminal window:
 
@@ -147,21 +145,7 @@ func UnnestInsert(conn *pgx.Conn, values [][]int) {
 
 ## Results
 
-At 25k rows (50k parameters at 2 parameters per row) our unnest insert is 120x faster. Beyond 25k rows, our regular insert hits its 65535 parameter constraint but our unnest function can still insert
-
-![leverage 50](./images/regular-vs-unnest.png)
-
-| rows (in 1000s) | regular (ms)    | unnest (ms)      | times faster |
-|-----------------|-------------|-------------|--------------|
-|               5 |   97.756644 |    6.165317 |  15 |
-|              15 |  1099.48859 |    15.35103 |  71 |
-|              25 | 2988.927136 |   24.724306 |  120 |
-|              35 |             |   36.393635 |              |
-|              70 |             |  111.888045 |              |
-|             150 |             |  160.799487 |              |
-|             500 |             |  689.425454 |              |
-|            5000 |             | 6748.465272 |              |
-
+Beyond 25k rows, our regular insert hits its 65535 parameter constraint but our unnest function can still insert
 
 Full code if you want to give it a try:
 
