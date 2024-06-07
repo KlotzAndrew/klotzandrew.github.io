@@ -3,7 +3,7 @@ layout: post
 title: "Mock filesystem for easier unit testing"
 date: 2024-06-07 13:00:00 -0500
 categories: software, testing
-featured: images/thanks_for_the_feedback.jpeg
+featured: images/mock-filesystem.jpeg
 description: ""
 ---
 
