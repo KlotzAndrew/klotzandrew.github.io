@@ -101,6 +101,10 @@ let books = [
     author: "Arkady Martine",
     date_finished: "2024/01/15",
     title: "A Memory Called Empire"
+  },{
+    author: "Martha Wells",
+    date_finished: "2024/01/01",
+    title: "All Systems Red"
   },
   //
   // 2023
