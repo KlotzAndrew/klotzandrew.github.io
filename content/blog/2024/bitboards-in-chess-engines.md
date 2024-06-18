@@ -3,7 +3,7 @@ layout: post
 title: "Bitboards in Chess Engines"
 date: 2024-06-17 13:00:00 -0500
 categories: bits
-featured: images/chess-bitboard.jpeg
+featured: images/chess-bitboard.png
 description: ""
 ---
 
