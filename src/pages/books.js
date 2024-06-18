@@ -58,9 +58,9 @@ let books = [
     title: "Skunk Works: A Personal Memoir of My Years of Lockheed"
   },
   {
-    author: "System Design Interview – An Insider's Guide: Volume 2",
+    author: "Alex Xu",
     date_finished: "",
-    title: "Alex Xu"
+    title: "System Design Interview – An Insider's Guide: Volume 2"
   },
   {
     author: "J.R. Storment, Mike Fuller",
@@ -77,6 +77,11 @@ let books = [
   //
   // 2024
   //
+  {
+    author: "Dana Mattioli",
+    date_finished: "2024/06/15",
+    title: "The Everything War"
+  },
   {
     author: "Rob Fitzpatrick",
     date_finished: "2024/04/18",
