@@ -9,7 +9,7 @@ description: ""
 
 Bazel is an open-source build system created by Google, that can provide fast builds for Go projects though incremental builds and remote caching. Setting up a new project in Go with Bazel can be a little difficult, this guide walks you through it.
 
-At a high level, Bazel operates BAZEL.build files. Bazel supports multiple languages, using BAZEL.build files provide a language-agnostic level for it to operate on. Our program will be written in Go and while we could write BAZEL.build files by hand ourselves we will be using Gazelle, a tool to generate those automatically. 
+At a high level, Bazel operates BAZEL.build files. Bazel supports multiple languages, using BAZEL.build files provide a language-agnostic level for it to operate on. Our program will be written in Go and while we could write BAZEL.build files by hand ourselves we will be using Gazelle, a tool to generate those automatically.
 
 The Go project we will be building is called hello-world-bazel-go, and consists of 3 few files:
 
@@ -41,9 +41,9 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 ```
 
-Now running `go run main.go` we should see the output of the debugging package Spew: 
+Now running `go run main.go` we should see the output of the debugging package Spew:
 
-![Screen Shot 2023-07-28 at 2.48.00 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dede500b-e2e6-4b3e-97c5-2441dd6bb0b8/Screen_Shot_2023-07-28_at_2.48.00_PM.png)
+![bazel_spew_output]("images/bazel_spew_output.png)
 
 Now to get started with Bazel, we need to [Install Bazel](https://bazel.build/start).
 
